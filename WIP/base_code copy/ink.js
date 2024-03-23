@@ -39,18 +39,47 @@ class Drop {
     this.col = random(colorsCT);
   }
 
-  // x, y - mouseX, mouseY
-  tine(m, x, y, z, c) {
+  // tine(m, x, y, z, c) {
+  //   let u = 1 / pow(2, 1 / c);
+  //   let b = createVector(x, y);
+  //   for (let v of this.vertices) {
+  //     let pb = p5.Vector.sub(v, b);
+  //     let n = m.copy().rotate(HALF_PI);
+  //     let d = abs(pb.dot(n));
+  //     let mag = z * pow(u, d);
+  //     v.add(m.copy().mult(mag));
+  //   }
+  // }
+
+  // vertical tine
+  vTine(x, z, c) {
     let u = 1 / pow(2, 1 / c);
-    let b = createVector(x, y);
     for (let v of this.vertices) {
-      let pb = p5.Vector.sub(v, b);
-      let n = m.copy().rotate(HALF_PI);
-      let d = abs(pb.dot(n));
-      let mag = z * pow(u, d);
-      v.add(m.copy().mult(mag));
+      v.x = v.x;
+      v.y = v.y + z * pow(u, abs(v.x - x));
     }
   }
+
+  // horizontal tine
+  hTine(y, z, c) {
+    let u = 1 / pow(2, 1 / c);
+    for (let v of this.vertices) {
+      v.x = v.x + z * pow(u, abs(v.y - y));
+      v.y = v.y;
+    }
+  }
+  // x, y - mouseX, mouseY
+  // tine(m, x, y, z, c) {
+  //   let u = 1 / pow(2, 1 / c);
+  //   let b = createVector(x, y);
+  //   for (let v of this.vertices) {
+  //     let pb = p5.Vector.sub(v, b);
+  //     let n = m.copy().rotate(HALF_PI);
+  //     let d = abs(pb.dot(n));
+  //     let mag = z * pow(u, d);
+  //     v.add(m.copy().mult(mag));
+  //   }
+  // }
 
   horizontalStart(x, y, z, c) {
     for (let i = 0; i < this.n; i++) {

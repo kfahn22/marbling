@@ -1,28 +1,51 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
 let drops = [];
-let n = 1;
+let n = 6;
 let z = 60;
 let c = 16;
-let sp = 0;
+let sp = 300;
 //let ysp = 0;
-let start = [];
+let startPoints = [];
+let endPoints = [];
 
 function setup() {
   createCanvas(600, 600);
-  for (let i = 0; i < 50; i++) {
-    addInk(random(width), random(height), 50);
-    addInk(300, 300, 50);
+  for (let i = 0; i < 100; i++) {
+    if (random(1) > 0) {
+      addInk(random(width), random(height), 50);
+    } else {
+      addInk(300, 300, 100);
+    }
+  }
+
+  sp = width / n;
+  addPoints(n, sp);
+  console.log(startPoints[0]);
+  for (let i = 0; i < n; i++) {
+    // need to shuffle or they will be correlated
+    let startX = shuffle(startPoints);
+    let startY = shuffle(startPoints);
+    tineLine(startX[i], startY[i], 30, 20);
+    //tineLine(startX[i], startY[i], 30, 4);
   }
 }
 
-function mousePressed() {
-  //start = createVector(mouseX, mouseY);
-  start.push(createVector(width / 2, 0));
+function addPoints(n, sp) {
+  let s = 0;
   for (let i = 0; i < n; i++) {
-    let v = createVector(i * sp, 0);
-    v.add(start);
-    start.push(v);
+    startPoints.push(s + sp * i);
+    //startPoints.push(createVector(s + i * sp, 0));
+  }
+}
+function mousePressed() {
+  let start = createVector(mouseX, mouseY);
+  //let start = createVector(0, 0);
+  let space = width / n;
+  for (let i = 0; i < n; i++) {
+    let v = createVector(space * i, 0);
+    start.add(v);
+    startPoints.push(v);
   }
 }
 
@@ -33,16 +56,32 @@ function mousePressed() {
 //   tineLine(end, mouseX, mouseY, 2, 16);
 // }
 
-function mouseDragged() {
-  let end = createVector(mouseX, mouseY);
-  end.sub(start[0]);
-  end.normalize();
-  tineLine(end, mouseX, mouseY, 2, 16);
+// function mouseDragged() {
+//   for (let i = 0; i < n; i++) {
+//     let stop = createVector(mouseX, mouseY);
+//     // stop.add(createVector(width*i/n, 0));
+//     stop.sub(startPoints[i]);
+//     stop.normalize();
+//     endPoints.push(stop);
+//     tineLine(endPoints[i], mouseX, mouseY, 2, 16);
+//   }
+// }
+// horizontal x of vertical line
+function tineLine(x, y, z, c) {
+  for (let drop of drops) {
+    drop.vTine(x, z, c);
+    drop.hTine(y, z, c);
+  }
+}
+function horizontalTines(startPoints, sp, z, c) {
+  for (let drop of drops) {
+    drop.hTine(x, z, c);
+  }
 }
 
-function tineLine(v, x, y, z, c) {
+function verticalTines(startPoints, sp, z, c) {
   for (let drop of drops) {
-    drop.tine(v, x, y, z, c);
+    drop.vTine(x, z, c);
   }
 }
 
@@ -75,7 +114,7 @@ function addInk(x, y, r) {
 }
 
 function draw() {
-  background(255);
+  background("#66D334");
   for (let drop of drops) {
     drop.show();
   }
