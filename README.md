@@ -23,6 +23,6 @@ The parameters z, u(c) control maximum displacement and sharpness of bends, with
 - [Marbled Paper Patterns](https://content.lib.washington.edu/dpweb/patterns.html)
 - [Mabling experiment](https://github.com/amandaghassaei/marbling-experiment/blob/main/src/simulation.ts)
 - [Mathematical Marbling How-To](https://people.csail.mit.edu/jaffer/Marbling/How-To)
-  (https://people.math.wisc.edu/~chr/am225/hw/am225_hw5.tex)
+
   - [Stable Fluids](https://www.dgp.toronto.edu/public_user/stam/reality/Research/pdf/ns.pdf)
 - [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics)
