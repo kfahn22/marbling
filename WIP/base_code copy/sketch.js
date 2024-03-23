@@ -114,7 +114,7 @@ function addInk(x, y, r) {
 }
 
 function draw() {
-  background("#66D334");
+  background(1,22,30);
   for (let drop of drops) {
     drop.show();
   }

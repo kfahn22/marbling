@@ -1,14 +1,10 @@
 const circleDetail = 100;
 
-let colorsCT = [
-  "#70327E",
-  "#9253A1",
-  "#A42963",
-  "#EC015A",
-  "#F063A4",
-  "#F16164",
-  "#F89E4F",
-  "#FCEE21",
+let colors = [
+  [18,69,89],
+  [89,131,146],
+  [174,195,176],
+  [239,246,224]
 ];
 
 class Drop {
@@ -36,7 +32,7 @@ class Drop {
       this.vertices[i] = v;
     }
     this.tines = [];
-    this.col = random(colorsCT);
+    this.col = random(colors);
   }
 
   // tine(m, x, y, z, c) {
