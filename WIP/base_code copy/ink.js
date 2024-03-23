@@ -1,5 +1,16 @@
 const circleDetail = 100;
 
+let colorsCT = [
+  "#70327E",
+  "#9253A1",
+  "#A42963",
+  "#EC015A",
+  "#F063A4",
+  "#F16164",
+  "#F89E4F",
+  "#FCEE21",
+];
+
 class Drop {
   constructor(x, y, r) {
     this.center = createVector(x, y);
@@ -23,6 +34,9 @@ class Drop {
   //   }
   // }
 
+  // m - current
+  // x,y - initial
+  // z - 
   tine(m, x, y, z, c) {
     let u = 1 / pow(2, 1 / c);
     let b = createVector(x, y);
@@ -33,6 +47,12 @@ class Drop {
       let mag = z * pow(u, d);
       v.add(m.copy().mult(mag));
     }
+  }
+ 
+  // n - number of tines
+  // s - spacing between tines
+  tines(n, s, angle) {
+    this.tine()
   }
 
   marble(other) {
