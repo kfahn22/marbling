@@ -1,6 +1,11 @@
 # Mathematical Marbling
 
-Vertical stroke
+
+
+Based [code](https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr) from [Daniel Shiffman](https://thecodingtrain.com) - Mathematical Marbling Coding Challenge.
+
+
+### Coding the tine strokes:
 
 From [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics):
 
@@ -23,6 +28,5 @@ The parameters z, u(c) control maximum displacement and sharpness of bends, with
 - [Marbled Paper Patterns](https://content.lib.washington.edu/dpweb/patterns.html)
 - [Mabling experiment](https://github.com/amandaghassaei/marbling-experiment/blob/main/src/simulation.ts)
 - [Mathematical Marbling How-To](https://people.csail.mit.edu/jaffer/Marbling/How-To)
-
-  - [Stable Fluids](https://www.dgp.toronto.edu/public_user/stam/reality/Research/pdf/ns.pdf)
+- [Stable Fluids](https://www.dgp.toronto.edu/public_user/stam/reality/Research/pdf/ns.pdf)
 - [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics)
