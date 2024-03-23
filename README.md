@@ -16,7 +16,7 @@ We can use things like random numbers and mathematical formulas to create patter
 
 Base [code](https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr) from [Daniel Shiffman](https://thecodingtrain.com) - Mathematical Marbling Coding Challenge coming soon.
 
-### Coding the tine strokes:
+### Coding the tine strokes
 
 From [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics):
 
@@ -24,7 +24,7 @@ $F_v(x, y) = (x, y + z \cdot u |x - x_L|)$
 
 $u = \frac{1}{2}^\frac{1}{c}$
 
-The parameters z, u(c) control maximum displacement and sharpness of bends, with a larger z yielding a larger displacement and a smaller c resulting in sharper bends.
+The parameters z, u(c) control maximum displacement and sharpness of bends. A larger z yields a larger displacement, while a smaller c results in sharper bends.
 
 ## References
 
