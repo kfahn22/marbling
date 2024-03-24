@@ -1,33 +1,36 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
 let drops = [];
-let n = 6;
-let z = 60;
-let c = 16;
-let sp = 300;
-//let ysp = 0;
+let n = 7;
+let z = 30;
+let c = 60;
 let startPoints = [];
 let endPoints = [];
 
 function setup() {
   createCanvas(600, 600);
-  for (let i = 0; i < 100; i++) {
-    if (random(1) > 0) {
-      addInk(random(width), random(height), 50);
-    } else {
-      addInk(300, 300, 100);
-    }
+  // for (let i = 0; i < 100; i++) {
+  //   if (random(1) > 0) {
+  //     addInk(random(width), random(height), 50);
+  //   } else {
+  //     addInk(300, 300, 100);
+  //   }
+  // }
+  sp = width / n;
+  for (let i = 0; i < 30; i++) {
+    //addInk(random(width), random(height), 100);
+    addInk(sp * i, sp * i, 100);
+    
   }
 
-  sp = width / n;
+  //sp = width / n;
   addPoints(n, sp);
-  console.log(startPoints[0]);
+  // console.log(startPoints[0]);
   for (let i = 0; i < n; i++) {
     // need to shuffle or they will be correlated
     let startX = shuffle(startPoints);
     let startY = shuffle(startPoints);
-    tineLine(startX[i], startY[i], 30, 20);
-    //tineLine(startX[i], startY[i], 30, 4);
+    tineLine(startX[i], startY[i], 30, 40);
   }
 }
 
@@ -69,13 +72,14 @@ function mousePressed() {
 // horizontal x of vertical line
 function tineLine(x, y, z, c) {
   for (let drop of drops) {
-    drop.vTine(x, z, c);
-    drop.hTine(y, z, c);
+    drop.vTine(x, 30, 60);
+    drop.hTine(y, 10, 60);
+    drop.vTine(x, 30, 60);
   }
 }
 function horizontalTines(startPoints, sp, z, c) {
   for (let drop of drops) {
-    drop.hTine(x, z, c);
+    drop.hTine(x, random(20, 60), random(8, 20));
   }
 }
 
@@ -85,24 +89,9 @@ function verticalTines(startPoints, sp, z, c) {
   }
 }
 
-// function tineLine(v, x, y, z, c) {
-//   for (let drop of drops) {
-//     // for (let i=0; i < drop.vertices.length; i++)
-//     // let vert = createVector(drop.vertices[i].x, drop.vertices[0].y);
-//     // console.log(drop.vertices[0].x);
-//    // drop.tine(v, x, y, z, c, angle, n);
-//     drop.horizontalStart(v, x, y, z, c);
-//     let tines = drop.tines;
-//     console.log(tines[0]);
-//     //comb.addTines();
-//   }
-// }
-
-// function tineLines(n, sp, v, x, y, z, c, angle) {
-//   for (let drop of drops) {
-//     drop.tines(n, sp, v, x, y, z, c, angle);
-//   }
-// }
+function mousePressed() {
+  save('marble.jpg')
+}
 
 function addInk(x, y, r) {
   let drop = new Drop(x, y, r);
@@ -114,7 +103,7 @@ function addInk(x, y, r) {
 }
 
 function draw() {
-  background(1,22,30);
+  background(2255,90,95);
   for (let drop of drops) {
     drop.show();
   }
