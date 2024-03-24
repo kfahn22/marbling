@@ -9,22 +9,31 @@ let endPoints = [];
 
 function setup() {
   createCanvas(600, 600);
-  for (let i = 0; i < n; i++) {
-    addInk(0, 60, abs(n + 10 - i));
-    addInk(400, 60, abs(n + 2 - i));
-    addInk(200, 400, abs(n + 2 - i));
-    addInk(-100, 400, abs(n + 2 - i));
+ // addInk(width/2, height/2, width);
+  for (let i = 0; i < 20; i++) {
+    addInk(random(width), random(height), 50);
+    addInk(300, 300, 50);
   }
-
+  //moreInk(60);
+  // for (let i = 0; i < n; i++) {
+  //   addInk(0, 60, abs(n + 2 - i));
+  //   addInk(400, 60, abs(n + 2 - i));
+  //   addInk(200, 400, abs(n + 2 - i));
+  //   addInk(-100, 400, abs(n + 2 - i));
+  // }
+  let startX, startY;
   sp = width / n;
-  addPoints(n, sp);
+  addPoints(10, sp);
   // console.log(startPoints[0]);
   for (let i = 0; i < n; i++) {
     // need to shuffle or they will be correlated
-    let startX = shuffle(startPoints);
-    let startY = shuffle(startPoints);
-    tineLine(startX[i], startY[i], 30, 20);
+    startX = shuffle(startPoints);
+    startY = shuffle(startPoints);
   }
+  // for (let i = 0; i < 10; i++) {
+  //   //tineLine(startX[i], startY[i], 30, 20);
+  //   tineLine(startX[i], startY[i], 60, 30);
+  // }
 }
 
 function addPoints(n, sp) {
@@ -65,8 +74,10 @@ function mousePressed() {
 // horizontal x of vertical line
 function tineLine(x, y, z, c) {
   for (let drop of drops) {
-    drop.vTine(x, 20, 60);
-    drop.hTine(y, 30, 60);
+    // drop.vTine(x, 20, 60);
+    // drop.hTine(y, 30, 60);
+    drop.vTine(x, 60, 30);
+    drop.hTine(y, 50, 30);
   }
 }
 function horizontalTines(startPoints, sp, z, c) {
@@ -92,6 +103,35 @@ function addInk(x, y, r) {
   }
   drops.push(drop);
   //console.log(drops[0].vertices[0].x);
+}
+
+function moreInk(n) {
+  for (let i = 0; i < n; i++) {
+    // addInk(0, 60, abs(n + 2 - i));
+    // addInk(400, 60, abs(n + 2 - i));
+    addInk(200, 400, abs(n + 2 - i));
+    //addInk(-100, 400, abs(n + 2 - i));
+    // addInk(
+    //   random(-width / 8, width / 8),
+    //   random(height / 8, height / 4),
+    //   abs(n + 2 - i)
+    // );
+    // addInk(
+    //   random((width * 1) / 4, (width * 2) / 4),
+    //   random((-height * 3) / 8, height / 16),
+    //   abs(n + 2 - i)
+    // );
+    // addInk(
+    //   random(width / 4, width / 3),
+    //   random((height * 2) / 3, height),
+    //   abs(n + 2 - i)
+    // );
+    // addInk(
+    //   random(-width / 4, 0),
+    //   random((height * 2) / 3, height),
+    //   abs(n + 2 - i)
+    // );
+  }
 }
 
 function draw() {

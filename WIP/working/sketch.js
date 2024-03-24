@@ -17,20 +17,18 @@ function setup() {
   //   }
   // }
   sp = width / n;
-  for (let i = 0; i < 30; i++) {
-    //addInk(random(width), random(height), 100);
-    addInk(sp * i, sp * i, 100);
-    
+  for (let i = 0; i < 10; i++) {
+    addInk(random(width), random(height), 100);
   }
 
   //sp = width / n;
-  addPoints(n, sp);
+  //addPoints(n, sp);
   // console.log(startPoints[0]);
   for (let i = 0; i < n; i++) {
     // need to shuffle or they will be correlated
     let startX = shuffle(startPoints);
     let startY = shuffle(startPoints);
-    tineLine(startX[i], startY[i], 30, 40);
+    tineLine(startX[i], startY[i], 40, 20);
   }
 }
 
@@ -41,13 +39,22 @@ function addPoints(n, sp) {
     //startPoints.push(createVector(s + i * sp, 0));
   }
 }
+// function mousePressed() {
+//   let start = createVector(mouseX, mouseY);
+//   //let start = createVector(0, 0);
+//   let space = width / n;
+//   for (let i = 0; i < n; i++) {
+//     let v = createVector(space * i, 0);
+//     start.add(v);
+//     startPoints.push(v);
+//   }
+// }
 function mousePressed() {
-  let start = createVector(mouseX, mouseY);
-  //let start = createVector(0, 0);
+  let s = 0;
   let space = width / n;
   for (let i = 0; i < n; i++) {
-    let v = createVector(space * i, 0);
-    start.add(v);
+    let v = createVector(s + space * i, mouseY);
+    //start.add(v);
     startPoints.push(v);
   }
 }
@@ -72,14 +79,14 @@ function mousePressed() {
 // horizontal x of vertical line
 function tineLine(x, y, z, c) {
   for (let drop of drops) {
-    drop.vTine(x, 30, 60);
-    drop.hTine(y, 10, 60);
-    drop.vTine(x, 30, 60);
+    drop.vTine(x, z, c);
+    // drop.hTine(y, z, c);
+    // drop.vTine(x, z, c);
   }
 }
 function horizontalTines(startPoints, sp, z, c) {
   for (let drop of drops) {
-    drop.hTine(x, random(20, 60), random(8, 20));
+    drop.hTine(x, 60, 16);
   }
 }
 
@@ -89,9 +96,9 @@ function verticalTines(startPoints, sp, z, c) {
   }
 }
 
-function mousePressed() {
-  save('marble.jpg')
-}
+// function mousePressed() {
+//   save("marble.jpg");
+// }
 
 function addInk(x, y, r) {
   let drop = new Drop(x, y, r);
@@ -103,7 +110,7 @@ function addInk(x, y, r) {
 }
 
 function draw() {
-  background(2255,90,95);
+  background(2255, 90, 95);
   for (let drop of drops) {
     drop.show();
   }

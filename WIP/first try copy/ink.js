@@ -1,4 +1,4 @@
-const circleDetail = 200;
+const circleDetail = 1000;
 
 let colors = [
   [18, 69, 89],

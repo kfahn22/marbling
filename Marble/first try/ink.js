@@ -35,17 +35,17 @@ class Drop {
     this.col = random(colors);
   }
 
-  // tine(m, x, y, z, c) {
-  //   let u = 1 / pow(2, 1 / c);
-  //   let b = createVector(x, y);
-  //   for (let v of this.vertices) {
-  //     let pb = p5.Vector.sub(v, b);
-  //     let n = m.copy().rotate(HALF_PI);
-  //     let d = abs(pb.dot(n));
-  //     let mag = z * pow(u, d);
-  //     v.add(m.copy().mult(mag));
-  //   }
-  // }
+  tine(m, x, y, z, c) {
+    let u = 1 / pow(2, 1 / c);
+    let b = createVector(x, y);
+    for (let v of this.vertices) {
+      let pb = p5.Vector.sub(v, b);
+      let n = m.copy().rotate(HALF_PI);
+      let d = abs(pb.dot(n));
+      let mag = z * pow(u, d);
+      v.add(m.copy().mult(mag));
+    }
+  }
 
   // vertical tine
   vTine(x, z, c) {
