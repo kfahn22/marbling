@@ -1,7 +1,7 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
 let drops = [];
-let n = 14;
+let n = 12;
 let z = 30;
 let c = 60;
 let startPoints = [];
@@ -12,21 +12,26 @@ function setup() {
   sp = width / n;
   // Add ink
   // Try adding evenly spaced ink blobs
-  for (let i = 0; i < width; i+=sp) {
-    for (let j = 0; j < height; j+=sp) {
-    addInk(i, j, 10);
+  // for (let i = 0; i < width; i+=sp) {
+  //   for (let j = 0; j < height; j+=sp) {
+  //   addInk(sp*i, sp*j, 50);
+
+    for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+    addInk(sp*(i+1), sp*(j+1), 35);
     //addInk(300, 300, 100);
   }
 }
   // Add evenly spaced tines
   
-  // addPoints(n, sp);
-  // for (let i = 0; i < n; i++) {
-  //   // need to shuffle or they will be correlated
-  //   let startX = shuffle(startPoints);
-  //   let startY = shuffle(startPoints);
-  //   tineLine(startX[i], startY[i], 40, 20);
-  // }
+  addPoints(n, sp);
+  for (let i = 0; i < n; i++) {
+    // need to shuffle or they will be correlated
+    let startX = shuffle(startPoints);
+    let startY = shuffle(startPoints);
+    //tineLine(startX[i], startY[i], 40, 20);
+    tineLine(startPoints[i], startPoints[i], 40, 30);
+  }
 }
 
 // Write a function to initialize multiple tines
@@ -43,6 +48,7 @@ function tineLine(x, y, z, c) {
   for (let drop of drops) {
     drop.vTine(x, z, c);
     drop.hTine(y, z, c);
+    
     // m, x, y, z, c
     //drop.tine();
     // drop.vTine(x, z, c);

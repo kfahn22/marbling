@@ -13,7 +13,7 @@ function setup() {
   // Add ink
   for (let i = 0; i < 10; i++) {
     addInk(random(width), random(height), 100);
-    //addInk(300, 300, 100);
+    addInk(300, 300, 100);
   }
   // Add evenly spaced tines
   sp = width / n;
