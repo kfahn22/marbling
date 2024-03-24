@@ -9,21 +9,24 @@ let endPoints = [];
 
 function setup() {
   createCanvas(600, 600);
-
+  sp = width / n;
   // Add ink
-  for (let i = 0; i < 10; i++) {
-    addInk(random(width), random(height), 100);
+  // Try adding evenly spaced ink blobs
+  for (let i = 0; i < width; i+=sp) {
+    for (let j = 0; j < height; j+=sp) {
+    addInk(i, j, 10);
     //addInk(300, 300, 100);
   }
+}
   // Add evenly spaced tines
-  sp = width / n;
-  addPoints(n, sp);
-  for (let i = 0; i < n; i++) {
-    // need to shuffle or they will be correlated
-    let startX = shuffle(startPoints);
-    let startY = shuffle(startPoints);
-    tineLine(startX[i], startY[i], 40, 20);
-  }
+  
+  // addPoints(n, sp);
+  // for (let i = 0; i < n; i++) {
+  //   // need to shuffle or they will be correlated
+  //   let startX = shuffle(startPoints);
+  //   let startY = shuffle(startPoints);
+  //   tineLine(startX[i], startY[i], 40, 20);
+  // }
 }
 
 // Write a function to initialize multiple tines
@@ -33,6 +36,7 @@ function addPoints(n, sp) {
     startPoints.push(s + sp * i);
   }
 }
+
 
 // horizontal x of vertical line
 function tineLine(x, y, z, c) {
