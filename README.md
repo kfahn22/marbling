@@ -34,7 +34,7 @@ The parameters z, u(c) control maximum displacement and sharpness of bends. A la
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href=""> <img class="img" src="Marbling with multiple directions" alt="Marbling with multiple directions" style="vertical-align:top;" width="500" /><br /><sub><b><br/>AMarbling with multiple directions</b></sub></a></td>
+      <td align="center"><a href=""> <img class="img" src="assets/marble-swne.jpg" alt="Marbling with multiple directions" style="vertical-align:top;" width="500" /><br /><sub><b><br/>Marbling with multiple directions</b></sub></a></td>
      <td align="center"><a href=""> <img class="img" src="" alt="" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" /><br /><sub><b><br/>Title</b></sub></a></td>
