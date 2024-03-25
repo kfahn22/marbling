@@ -50,8 +50,10 @@ function setup() {
 // horizontal x of vertical line
 function tineLines() {
   for (let drop of drops) {
-    drop.south();
+    //drop.south();
     //drop.north();
+    //drop.east();
+    drop.west();
   }
 }
 // function horizontalTines(startPoints, sp, z, c) {

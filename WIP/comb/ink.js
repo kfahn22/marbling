@@ -94,7 +94,7 @@ class Drop {
     for (let i = 0; i < this.n; i++) {
       let y = this.startPoints[i];
       //console.log(x);
-      x += this.hTine(y, this.z, this.c);
+      x += this.hTine(y, this.z, this.c, 1);
       this.htines.push(x, y);
     }
   }
@@ -105,8 +105,7 @@ class Drop {
     //this.startPoints = this.addPoints(this.n, this.sp);
     for (let i = 0; i < this.n; i++) {
       let y = this.startPoints[i];
-      //console.log(x);
-      x += this.hTine(y, this.z, this.c);
+      x += this.hTine(y, this.z, this.c, 0);
       this.htines.push(x, y);
     }
   }
@@ -125,11 +124,15 @@ class Drop {
   }
 
   // horizontal tine
-  hTine(y, z, c) {
+  hTine(y, z, c, dir) {
     let u = 1 / pow(2, 1 / c);
     for (let v of this.vertices) {
-      v.x = v.x + z * pow(u, abs(v.y - y));
       v.y = v.y;
+      if (dir === 0) {
+        v.x = v.x + z * pow(u, abs(v.y - y));
+      } else if (dir === 1) {
+        v.x = v.x - z * pow(u, abs(v.y - y));
+      }
     }
   }
 
