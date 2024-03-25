@@ -11,9 +11,9 @@ class Drop {
   constructor(x, y, r) {
     this.center = createVector(x, y);
     this.r = r;
-    this.n = 6;
+    this.n = 7;
     this.z = 20;
-    this.c = 20;
+    this.c = 16;
     // try to create one than one tine
     let sp = width / this.n;
     this.startPoints = [];
@@ -147,6 +147,7 @@ class Drop {
       let p = v.copy();
       p.sub(c);
       let m = p.mag();
+      // magsquared
       let root = sqrt(1 + (r * r) / (m * m));
       p.mult(root);
       p.add(c);

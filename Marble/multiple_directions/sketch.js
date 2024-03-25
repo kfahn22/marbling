@@ -3,16 +3,16 @@
 let drops = [];
 let n = 4;
 let z = 40;
-let c = 30;
+let c = 60;
 let startPoints = [];
 let endPoints = [];
 
 function setup() {
   createCanvas(600, 600);
   sp = width / n;
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 100; i++) {
     //addInk(random(width), random(height), 100);
-    addInk(300, 300, 70);
+    addInk(300, 300, 30);
   }
 
   for (let i = 0; i < n; i++) {
