@@ -50,27 +50,14 @@ function setup() {
 // horizontal x of vertical line
 function tineLines() {
   for (let drop of drops) {
-    drop.north();
-    drop.east();
-    drop.south();
-    drop.east();
-    //drop.south();
     //drop.north();
-    //drop.east();
-    //drop.west();
+    // drop.east();
+    // drop.south();
+    // drop.east();
+    drop.combine(0, 1);
+   ;
   }
 }
-// function horizontalTines(startPoints, sp, z, c) {
-//   for (let drop of drops) {
-//     drop.hTine(x, 60, 16);
-//   }
-// }
-
-// function verticalTines(startPoints, sp, z, c) {
-//   for (let drop of drops) {
-//     drop.vTine(x, z, c);
-//   }
-// }
 
 // function mousePressed() {
 //   save("marble.jpg");

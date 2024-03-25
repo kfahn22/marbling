@@ -12,7 +12,7 @@ class Drop {
     this.center = createVector(x, y);
     this.r = r;
     //this.sp = width/this.n;
-    this.n = 4;
+    this.n = 7;
     this.z = 60;
     this.c = 8;
     // try to create one than one tine
@@ -55,19 +55,24 @@ class Drop {
 
   combine(vdir, hdir) {
     let u = 1 / pow(2, 1 / this.c);
-    let b = [];
+    //let b = [];
     this.addPoints();
     for (let i = 0; i < this.n; i++) {
       let x = this.startPoints[i];
       let y = this.startPoints[i];
-      b.push(createVector(x, y));
+      //b.push(createVector(x, y));
 
       for (let v of this.vertices) {
         if (vdir === 0) {
-          v.x = v.x;
+          //v.x = v.x;
           v.y = v.y + this.z * pow(u, abs(v.x - x));
         } else if (vdir === 1) {
           v.y = v.y - this.z * pow(u, abs(v.x - x));
+        }
+        if (hdir === 0) {
+          v.x = v.x + z * pow(u, abs(v.y - y));
+        } else if (hdir === 1) {
+          v.x = v.x - z * pow(u, abs(v.y - y));
         }
       }
     }

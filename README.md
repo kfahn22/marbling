@@ -32,6 +32,7 @@ The parameters z, u(c) control maximum displacement and sharpness of bends. A la
 - [Digital Marbling](http://digital-marbling.de)
 - [Digital Marbling by Amanda Ghassaei](https://blog.amandaghassaei.com/2022/10/25/digital-marbling/)
 - [Digital Marbling a GPU Approach With Precomputed Velocity Field](https://cs.uwaterloo.ca/sites/ca.computer-science/files/uploads/files/cs-2014-08.pdf)
+- [Divergence](https://en.wikipedia.org/wiki/Divergence)
 - [Efficient and Conservative Fluids Using Bidirectional Mapping](https://www.seas.upenn.edu/~ziyinq/static/files/bimocq.pdf)
 - [Fluid Simulation (with WebGL demo)](https://jamie-wong.com/2016/08/05/webgl-fluid-simulation/)
 - [Marblizer](https://github.com/nickswalker/marblizer)
