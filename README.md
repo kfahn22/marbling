@@ -26,6 +26,33 @@ $u = \frac{1}{2}^\frac{1}{c}$
 
 The parameters z, u(c) control maximum displacement and sharpness of bends. A larger z yields a larger displacement, while a smaller c results in sharper bends.
 
+## 🌄 Gallery
+
+<!-- IMAGE-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href=""> <img class="img" src="Marbling with multiple directions" alt="Marbling with multiple directions" style="vertical-align:top;" width="500" /><br /><sub><b><br/>AMarbling with multiple directions</b></sub></a></td>
+     <td align="center"><a href=""> <img class="img" src="" alt="" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" /><br /><sub><b><br/>Title</b></sub></a></td>
+      <td align="center"><a href=""> <img class="img" src="" alt="3D Apollonian gaskets" style="vertical-align:top;" width="500" /><br /><sub><b><br/>Title</b></sub></a></td>
+     <td align="center"><a href=""> <img class="img" src="" alt="" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" /><br /><sub><b><br/>Title</b></sub></a></td>
+</tr>
+
+    
+ </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- IMAGE-LIST:END -->
+
 ## References
 
 - [A Computational Method for Interactive Design of Marbling Patterns](https://www.researchgate.net/publication/330940964_A_Computational_Method_for_Interactive_Design_of_Marbling_Patterns/link/5e42f45492851c7f7f2f9031/download?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InB1YmxpY2F0aW9uIn19)
