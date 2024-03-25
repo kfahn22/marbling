@@ -1,4 +1,4 @@
-const circleDetail = 1000;
+const circleDetail = 500;
 
 let colors = [
   [18, 69, 89],
@@ -11,12 +11,10 @@ class Drop {
   constructor(x, y, r) {
     this.center = createVector(x, y);
     this.r = r;
-    //this.sp = width/this.n;
-    this.n = 7;
-    this.z = 60;
-    this.c = 8;
+    this.n = 4;
+    this.z = 30;
+    this.c = 16;
     // try to create one than one tine
-    //this.start = createVector(0, 0);
     this.startPoints = [];
     this.vertices = [];
     for (let i = 0; i < circleDetail; i++) {
@@ -53,34 +51,47 @@ class Drop {
   //   }
   // }
 
-  combine(vdir, hdir) {
-    let u = 1 / pow(2, 1 / this.c);
-    //let b = [];
-    this.addPoints();
-    for (let i = 0; i < this.n; i++) {
-      let x = this.startPoints[i];
-      let y = this.startPoints[i];
-      //b.push(createVector(x, y));
+  // combine(vdir, hdir) {
+  //   let u = 1 / pow(2, 1 / this.c);
+  //   //let b = [];
+  //   this.addPoints();
+  //   for (let i = 0; i < this.n; i++) {
+  //     let x = this.startPoints[i];
+  //     let y = this.startPoints[i];
+  //     //b.push(createVector(x, y));
 
-      for (let v of this.vertices) {
-        if (vdir === 0) {
-          //v.x = v.x;
-          v.y = v.y + this.z * pow(u, abs(v.x - x));
-        } else if (vdir === 1) {
-          v.y = v.y - this.z * pow(u, abs(v.x - x));
-        }
-        if (hdir === 0) {
-          v.x = v.x + z * pow(u, abs(v.y - y));
-        } else if (hdir === 1) {
-          v.x = v.x - z * pow(u, abs(v.y - y));
-        }
-      }
-    }
-  }
+  //     for (let v of this.vertices) {
+  //       if (vdir === 0) {
+  //         //v.x = v.x;
+  //         v.y = v.y + this.z * pow(u, abs(v.x - x));
+  //       } else if (vdir === 1) {
+  //         v.y = v.y - this.z * pow(u, abs(v.x - x));
+  //       }
+  //       if (hdir === 0) {
+  //         v.x = v.x + z * pow(u, abs(v.y - y));
+  //       } else if (hdir === 1) {
+  //         v.x = v.x - z * pow(u, abs(v.y - y));
+  //       }
+  //     }
+  //   }
+  // }
 
   // need to shuffle or they will be correlated
   //  let startX = shuffle(startPoints);
   //     let startY = shuffle(startPoints);
+  combine() {
+    let u = 1 / pow(2, 1 / this.c);
+    this.addPoints();
+    for (let i = 0; i < this.n; i++) {
+      let x = this.startPoints[i];
+      let y = this.startPoints[i];
+    }
+    this.south();
+    this.west();
+    this.north();
+    this.east();
+  }
+
   north() {
     let y;
     this.addPoints();

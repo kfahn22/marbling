@@ -1,18 +1,18 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
 let drops = [];
-let n = 2;
-let z = 30;
-let c = 60;
+let n = 7;
+let z = 40;
+let c = 30;
 let startPoints = [];
 let endPoints = [];
 
 function setup() {
   createCanvas(600, 600);
   sp = width / n;
-  for (let i = 0; i < 20; i++) {
-    addInk(random(width), random(height), 100);
-    //addInk(300, 300, 100);
+  for (let i = 0; i < 50; i++) {
+    //addInk(random(width), random(height), 100);
+    addInk(300, 300, 50);
   }
 
   for (let i = 0; i < n; i++) {
@@ -20,42 +20,16 @@ function setup() {
   }
 }
 
-// function addPoints(n, sp) {
-//   let s = 0;
-//   for (let i = 0; i < n; i++) {
-//     startPoints.push(s + sp * i);
-//     //startPoints.push(createVector(s + i * sp, 0));
-//   }
-// }
-// function stopPoints(n, sp) {
-//   let s = 0;
-//   for (let i = 0; i < n; i++) {
-//     endPoints.push(s + sp * i);
-//     //startPoints.push(createVector(s + i * sp, 0));
-//   }
-// }
-
-// function movePoints() {
-//   for (let i = 0; i < n; i++) {
-//     let start = startPoints[i];
-//     let e = endPoints[i];
-//     e.sub(start);
-//     e.normalize();
-//     //endPoints.push(stop);
-//     let end = createVector(end, y);
-//     tineLine(end, start, y, 2, 16);
-//   }
-// }
-
-// horizontal x of vertical line
+// north() & south() cancel each other out
+// east() & west() cancel each other out
 function tineLines() {
   for (let drop of drops) {
-    //drop.north();
-    // drop.east();
+    // drop.north();
     // drop.south();
-    // drop.east();
-    drop.combine(0, 1);
-   ;
+    //drop.east();
+    //drop.west();
+    //drop.combine(1, 1);
+    drop.combine();
   }
 }
 
