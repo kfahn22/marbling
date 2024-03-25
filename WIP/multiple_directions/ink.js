@@ -11,11 +11,16 @@ class Drop {
   constructor(x, y, r) {
     this.center = createVector(x, y);
     this.r = r;
-    this.n = 7;
-    this.z = 10;
-    this.c = 16;
+    this.n = 6;
+    this.z = 20;
+    this.c = 20;
     // try to create one than one tine
+    let sp = width / this.n;
     this.startPoints = [];
+    for (let i = 1; i < this.n; i++) {
+      this.startPoints.push(sp * i);
+      //console.log(this.startPoints);
+    }
     this.vertices = [];
     for (let i = 0; i < circleDetail; i++) {
       let angle = map(i, 0, circleDetail, 0, TWO_PI);
@@ -31,11 +36,9 @@ class Drop {
 
   // Function that adds starting points for tines
   addPoints() {
-    let s;
     let sp = width / this.n;
-    s = 0;
     for (let i = 0; i < this.n; i++) {
-      this.startPoints.push(s + sp * i);
+      this.startPoints.push(sp * i);
     }
   }
 
@@ -48,31 +51,6 @@ class Drop {
   //     let d = abs(pb.dot(n));
   //     let mag = z * pow(u, d);
   //     v.add(m.copy().mult(mag));
-  //   }
-  // }
-
-  // combine(vdir, hdir) {
-  //   let u = 1 / pow(2, 1 / this.c);
-  //   //let b = [];
-  //   this.addPoints();
-  //   for (let i = 0; i < this.n; i++) {
-  //     let x = this.startPoints[i];
-  //     let y = this.startPoints[i];
-  //     //b.push(createVector(x, y));
-
-  //     for (let v of this.vertices) {
-  //       if (vdir === 0) {
-  //         //v.x = v.x;
-  //         v.y = v.y + this.z * pow(u, abs(v.x - x));
-  //       } else if (vdir === 1) {
-  //         v.y = v.y - this.z * pow(u, abs(v.x - x));
-  //       }
-  //       if (hdir === 0) {
-  //         v.x = v.x + z * pow(u, abs(v.y - y));
-  //       } else if (hdir === 1) {
-  //         v.x = v.x - z * pow(u, abs(v.y - y));
-  //       }
-  //     }
   //   }
   // }
 
@@ -90,15 +68,15 @@ class Drop {
     // this.west();
     // this.north();
     // this.east();
-    this.north();
-    this.east();
     this.south();
+    this.west();
+    this.north();
     this.east();
   }
 
   north() {
     let y;
-    this.addPoints();
+    //this.addPoints();
     for (let i = 0; i < this.n; i++) {
       let x = this.startPoints[i];
       y += this.vTine(x, this.z, this.c, 1);
@@ -108,7 +86,7 @@ class Drop {
 
   south() {
     let x;
-    this.addPoints();
+    //this.addPoints();
     for (let i = 0; i < this.n; i++) {
       let y = this.startPoints[i];
       x += this.vTine(y, this.z, this.c, 0);
@@ -118,7 +96,7 @@ class Drop {
 
   east() {
     let x;
-    this.addPoints();
+    //this.addPoints();
     for (let i = 0; i < this.n; i++) {
       let y = this.startPoints[i];
       x += this.hTine(y, this.z, this.c, 1);
@@ -128,7 +106,7 @@ class Drop {
 
   west() {
     let x;
-    this.addPoints();
+    // this.addPoints();
     for (let i = 0; i < this.n; i++) {
       let y = this.startPoints[i];
       x += this.hTine(y, this.z, this.c, 0);
