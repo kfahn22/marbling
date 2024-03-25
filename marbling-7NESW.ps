@@ -1,0 +1,95 @@
+%!PS-Adobe-2.0
+%%Pages: 1
+%%Title: Marbling Topological Graphic
+%%Copyright: 2004, 2010 Aubrey Jaffer
+%%Creator: Aubrey Jaffer
+%%For: Voluntocracy
+%%CreationDate: 2010-02-14
+%%BoundingBox: 1 1 256 256
+%%EndComments
+
+/URL (http://people.csail.mit.edu/jaffer/Marbling) def
+
+% Given x, y coordinates on stack, displaces in y by amount inversely
+% proportional to distance from any of 7 equally spaced tine lines.
+/F
+{
+  /y exch def  
+  /x exch def
+  x
+  y
+  scl neg scl 3 div scl
+  {
+      x sub abs u exch exp z mul add
+  } for
+} bind def
+
+% Given x, y coordinates on stack, displaces x, y per four successive
+% combings from North, East, South, and West.
+/Composite-map
+{
+% idempotent:  F exch neg F neg exch neg exch F neg exch F
+% center-bird: F exch neg F neg exch neg F neg exch F exch
+               F exch F exch neg F neg exch neg F neg exch
+} bind def
+
+% Given x, y coordinates on stack and eps < 2, leaves x, y on stack
+% for next point on the circle centered at origin.
+/Minsky-circle
+{
+  dup 3 1 roll eps mul sub dup eps mul 3 2 roll add
+} bind def
+
+% Draws and fills circle as distorted by combings.
+/do-ink
+{
+  ix 0 Composite-map moveto
+  ix 0
+  {
+    dup /oy exch def
+    Minsky-circle 2 copy Composite-map lineto
+    dup 0 gt oy 0 lt and {exit} if
+  } loop
+  pop pop
+  closepath fill % stroke
+} bind def
+
+% Fills concentric (distorted) circles.
+/do-inks
+{
+  /eps 0.25 ix div def
+  {
+    {0.376 0.357 0.451 setrgbcolor}
+    {0.255 0.259 0.341 setrgbcolor}
+    {0.306 0.498 0.62  setrgbcolor}
+    {0.686 0.741 0.851 setrgbcolor}
+    {0.353 0.529 0.627 setrgbcolor}
+  }
+  {
+    /clr exch def clr do-ink
+    /ix ix width 23.5 div sub def
+    ix minx lt {exit} if
+  } forall
+} bind def
+
+%%Page: 1 1
+gsave
+  clippath pathbbox /hiy exch def /hix exch def /loy exch def /lox exch def
+  hix lox add .5 mul hiy loy add .5 mul translate
+  newpath
+  /height hiy loy sub 2 div def
+  /width  hix lox sub 2 div def
+  /scl height width mul sqrt def
+  /z scl 4 div def
+  /c scl 25 div def
+  /u 2 -1 c div exp def
+  newpath
+  0 setlinewidth
+  /ix width 1.5 mul def
+  /minx 2 def
+  {
+    do-inks
+    ix minx lt {exit} if
+  } loop
+grestore
+showpage
