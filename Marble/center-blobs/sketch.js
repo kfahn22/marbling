@@ -1,7 +1,8 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
 let drops = [];
-let n = 4;
+let n = 1;
+let rn = 0;
 let z = 40;
 let c = 60;
 let startPoints = [];
@@ -10,9 +11,16 @@ let endPoints = [];
 function setup() {
   createCanvas(600, 600);
   sp = width / n;
-  for (let i = 0; i < 100; i++) {
+  // Evenly spaced ink blobs
+  // for (let i = 0; i < n; i++) {
+  //   for (let j = 0; j < n; j++) {
+  //     addInk(sp / 2 + sp * i, -sp / 2 + sp * j, 35);
+  //   }
+  // }
+  // A ton of central ink blobs
+  for (let i = 0; i < 200; i++) {
     //addInk(random(width), random(height), 100);
-    addInk(300, 300, 30);
+    addInk(width / 2, height / 2, 30);
   }
 
   for (let i = 0; i < n; i++) {
@@ -24,11 +32,11 @@ function setup() {
 // east() & west() cancel each other out
 function tineLines() {
   for (let drop of drops) {
-    // drop.north();
-    // drop.south();
+    //drop.north();
+    //drop.south();
     //drop.east();
     //drop.west();
-    //drop.combine(1, 1);
+
     drop.combine();
   }
 }
@@ -46,7 +54,7 @@ function addInk(x, y, r) {
 }
 
 function draw() {
-  background(2255, 90, 95);
+  background(35, 27, 27);
   for (let drop of drops) {
     drop.show();
   }
