@@ -1,15 +1,28 @@
-const circleDetail = 100;
+const circleDetail = 720;
 
-function hyperbolicTan(theta) {
-  let e = 2.71828;
-  let l = pow(e, 2 * theta);
-  return (l - 1) / (l + 1);
+// for (let i = 0; i < 11; i++) {
+//   //let angle = TWO_PI * i / 5;
+//   let angle = (360 * i) / 5;
+//   let x = cos(angle) * this.r1;
+//   let y = sin(angle) * this.r1;
+//   this.particles.push(new Particle(x, y));
+//   // angle += TWO_PI / this.adj;
+//   angle += 360 / this.adj;
+//   x = cos(angle) * this.r2;
+//   y = sin(angle) * this.r2;
+//   this.particles.push(new Particle(x, y));
+// }
+
+function polarToCartesian(r, angle) {
+  return createVector(r * cos(angle), r * sin(angle));
 }
 
 class Drop {
   constructor(x, y, r) {
     this.center = createVector(x, y);
-    this.r = r;
+    this.r1 = 25;
+    this.r2 = 5;
+    this.spacing = 5;
     this.n = 8;
     this.z = 80;
     this.c = 32;
@@ -20,32 +33,26 @@ class Drop {
       this.startPoints.push(sp / 2 + sp * i);
     }
     this.vertices = [];
-    let sc = 60;
+
+    let v;
     // add gear curve
-    for (let i = 0; i < circleDetail; i += 1) {
-      let angle = map(i, 0, circleDetail, 0, TWO_PI);
-      this.r = sc * (1 + (1 / 10) * hyperbolicTan(10 * sin(10 * angle)));
-      //let r = 1 + (1 / 10) * hyperbolicTan(10 * sin(10 * i));
-      let v = createVector(cos(angle), sin(angle));
+    for (let i = 0; i < circleDetail; i += this.spacing) {
+      let a = map(i, 0, circleDetail, 0, TWO_PI);
+      //for (let a = 0; a < 360; a += this.spacing) {
+      if (a % 2 == 0) {
+        v = polarToCartesian(this.r1, a);
+      } else {
+        v = polarToCartesian(this.r2, a);
+      }
       v.mult(this.r);
       v.add(this.center);
       this.vertices[i] = v;
     }
+
     this.vtines = [];
     this.htines = [];
     this.col = random(color6);
   }
-
-  // showGear() {
-  //   // stroke(this.col);
-  //   // let sw = map(Math.log2(this.radius), 3.4, Math.log2(100), 0.3, 4);
-  //   // strokeWeight(sw);
-  //   // //strokeWeight(0.5 * pow(this.radius, 0.3));
-  //   push();
-  //   setCenter(this.center.a, this.center.b);
-  //   polarGear(0, this.radius * 2, this.radius, 20);
-  //   pop();
-  // }
 
   // Function that adds starting points for tines
   addPoints() {

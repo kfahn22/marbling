@@ -1,4 +1,4 @@
-const circleDetail = 200;
+const circleDetail = 100;
 
 function hyperbolicTan(theta) {
   let e = 2.71828;
@@ -21,29 +21,44 @@ class Drop {
       //console.log(this.startPoints);
     }
     this.vertices = [];
-    for (let i = 0; i < circleDetail; i++) {
-      let angle = map(i, 0, circleDetail, 0, TWO_PI);
-      let v = createVector(cos(angle), sin(angle));
+    let sc = 30;
+    // cannibus leaf
+    for (let i = 0; i < circleDetail; i += 1) {
+      let a = map(i, 0, circleDetail, 0, TWO_PI);
+      this.r =
+        sc *
+        (1 + (9 / 10) * cos(8 * a)) *
+        (1 + (1 / 10) * cos(24 * a)) *
+        (9 / 10 + (1 / 10) * cos(200 * a)) *
+        (1 + sin(a));
+      //let r = 1 + (1 / 10) * hyperbolicTan(10 * sin(10 * i));
+      let v = createVector(cos(a), sin(a));
       v.mult(this.r);
       v.add(this.center);
       this.vertices[i] = v;
     }
+    // for (let i = 0; i < circleDetail; i++) {
+    //   let angle = map(i, 0, circleDetail, 0, TWO_PI);
+    //   let v = createVector(cos(angle), sin(angle));
+    //   v.mult(this.r);
+    //   v.add(this.center);
+    //   this.vertices[i] = v;
+    // }
     this.vtines = [];
     this.htines = [];
-    this.col = random(color5);
+    this.col = random(color6);
   }
 
-  showGear() {
-    // stroke(this.col);
-    // let sw = map(Math.log2(this.radius), 3.4, Math.log2(100), 0.3, 4);
-    // strokeWeight(sw);
-    // //strokeWeight(0.5 * pow(this.radius, 0.3));
-    push();
-    setCenter(this.center.a, this.center.b);
-    polarGear(0, this.radius * 2, this.radius, 20);
-    pop();
-  }
-
+  // showGear() {
+  //   // stroke(this.col);
+  //   // let sw = map(Math.log2(this.radius), 3.4, Math.log2(100), 0.3, 4);
+  //   // strokeWeight(sw);
+  //   // //strokeWeight(0.5 * pow(this.radius, 0.3));
+  //   push();
+  //   setCenter(this.center.a, this.center.b);
+  //   polarGear(0, this.radius * 2, this.radius, 20);
+  //   pop();
+  // }
 
   // Function that adds starting points for tines
   addPoints() {
@@ -174,10 +189,12 @@ class Drop {
   show() {
     fill(this.col);
     noStroke();
+    push()
     beginShape();
     for (let v of this.vertices) {
       vertex(v.x, v.y);
     }
     endShape(CLOSE);
+    pop()
   }
 }
