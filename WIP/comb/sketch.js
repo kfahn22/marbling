@@ -10,12 +10,12 @@ let endPoints = [];
 function setup() {
   createCanvas(600, 600);
   sp = width / n;
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 20; i++) {
     //addInk(random(width), random(height), 100);
     addInk(300, 300, 50);
   }
 
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < 4; i++) {
     tineLines();
   }
 }
@@ -24,7 +24,7 @@ function setup() {
 // east() & west() cancel each other out
 function tineLines() {
   for (let drop of drops) {
-    // drop.north();
+    //drop.north();
     // drop.south();
     //drop.east();
     //drop.west();

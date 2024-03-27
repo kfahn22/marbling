@@ -43,6 +43,16 @@ The parameters z, u(c) control maximum displacement and sharpness of bends. A la
     margin-left: auto;
     margin-right: auto;" width="500" /><br /><sub><b><br/>Title</b></sub></a></td>
 </tr>
+<tr>
+      <td align="center"><a href=""> <img class="img" src="assets/centerpoints.jpg" alt="Marbling with evenly spaced blobs" style="vertical-align:top;" width="500" /><br /><sub><b><br/>Marbling with evenly spaced blobs - no tines</b></sub></a></td>
+     <td align="center"><a href=""> <img class="img" src="assets/centerBlobs-tines.jpg" alt="Marbling starting fron evenly spaced blobs" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" /><br /><sub><b><br/>Marbling with evenly spaced blobs</b></sub></a></td>
+      <td align="center"><a href=""> <img class="img" src="" alt="" style="vertical-align:top;" width="500" /><br /><sub><b><br/></b></sub></a></td>
+     <td align="center"><a href=""> <img class="img" src="" alt="" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="500" /><br /><sub><b><br/>Title</b></sub></a></td>
+</tr>
 
     
  </tbody>
@@ -69,5 +79,14 @@ The parameters z, u(c) control maximum displacement and sharpness of bends. A la
 - [Mabling experiment](https://github.com/amandaghassaei/marbling-experiment/blob/main/src/simulation.ts)
 - [Mathematical Marbling How-To](https://people.csail.mit.edu/jaffer/Marbling/How-To) -[Oseen Flow in Paint Marbling](https://arxiv.org/pdf/1702.02106.pdf)
 - [Stable Fluids](https://www.dgp.toronto.edu/public_user/stam/reality/Research/pdf/ns.pdf)
-- [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics)
+- [The Hydrodynamics of Marbling](https://fyfluiddynamics.com/2023/12/the-hydrodynamics-of-marbling/)
+- [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics) -[Winning Videos Feature Marbling Paint and Freezing Flashes](https://physics.aps.org/articles/v16/201)
 - [Watermarble Simulator](https://github.com/rinsavs/watermarble_simulator)
+
+## Videos
+
+[The Hydrodynamics of Marbling Art](https://www.youtube.com/watch?v=yzlPvtDmtAE)
+
+## Code
+
+[incrmt](https://github.com/chr1shr/incrmt)

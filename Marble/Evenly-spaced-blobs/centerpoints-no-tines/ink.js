@@ -7,12 +7,12 @@ const circleDetail = 500;
 //   [239, 246, 224],
 // ];
 
-// let colors = [
-//   [221,255,247],
-//   [255,210,252],
-//   [233,128,252],
-//   [185,106,201]
-// ]
+let colors = [
+  [160, 238, 192],
+  [138, 233, 193],
+  [134, 205, 130],
+  [114, 162, 118],
+];
 
 class Drop {
   constructor(x, y, r) {
@@ -38,7 +38,7 @@ class Drop {
     }
     this.vtines = [];
     this.htines = [];
-    this.col = random(color3);
+    this.col = random(color2);
   }
 
   // Function that adds starting points for tines

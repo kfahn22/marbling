@@ -7,20 +7,20 @@ const circleDetail = 500;
 //   [239, 246, 224],
 // ];
 
-let colors = [
-  [160, 238, 192],
-  [138, 233, 193],
-  [134, 205, 130],
-  [114, 162, 118]
-]
+// let colors = [
+//   [160, 238, 192],
+//   [138, 233, 193],
+//   [134, 205, 130],
+//   [114, 162, 118]
+// ]
 
 class Drop {
   constructor(x, y, r) {
     this.center = createVector(x, y);
     this.r = r;
-    this.n = 8;
-    this.z = 30;
-    this.c = 16;
+    this.n = 8; // 8
+    this.z = 40; //30
+    this.c = 20; // 16
     // try to create one than one tine
     let sp = width / this.n;
     this.startPoints = [];
@@ -38,7 +38,7 @@ class Drop {
     }
     this.vtines = [];
     this.htines = [];
-    this.col = random(colors);
+    this.col = random(color4);
   }
 
   // Function that adds starting points for tines
@@ -71,56 +71,60 @@ class Drop {
       let x = this.startPoints[i];
       let y = this.startPoints[i];
     }
-    // this.south();
-    // this.west();
-    // this.north();
-    // this.east();
+    // this.south(40, 20);
+    // this.west(40, 20);
+    // this.north(40, 20);
+    // this.east(40, 20);
 
     for (let i = 0; i < 1; i++) {
-      this.east();
-      this.south();
-      this.west();
-      this.north();
+      this.east(40, 20);
+      this.south(40, 20);
+      this.west(40, 20);
+      this.north(40, 20);
+      // this.east(10 * i, 5 * i);
+      // this.south(10 * i, 5 * i);
+      // this.west(10 * i, 5 * i);
+      // this.north(10 * i, 5 * i);
     }
   }
 
-  north() {
+  north(z, c) {
     let y;
     let dir = -1;
     //this.addPoints();
     for (let i = 0; i < this.n; i++) {
       let x = this.startPoints[i];
-      y += this.vTine(x, this.z, this.c, dir);
+      y += this.vTine(x, z, c, dir);
       this.vtines.push(x, y);
     }
   }
 
-  south() {
+  south(z, c) {
     let x;
     //this.addPoints();
     for (let i = 0; i < this.n; i++) {
       let y = this.startPoints[i];
-      x += this.vTine(y, this.z, this.c, 0);
+      x += this.vTine(y, z, c, 0);
       this.htines.push(x, y);
     }
   }
 
-  east() {
+  east(z, c) {
     let x;
     //this.addPoints();
     for (let i = 0; i < this.n; i++) {
       let y = this.startPoints[i];
-      x += this.hTine(y, this.z, this.c, 1);
+      x += this.hTine(y, z, c, 1);
       this.htines.push(x, y);
     }
   }
 
-  west() {
+  west(z, c) {
     let x;
     // this.addPoints();
     for (let i = 0; i < this.n; i++) {
       let y = this.startPoints[i];
-      x += this.hTine(y, this.z, this.c, 0);
+      x += this.hTine(y, z, c, 0);
       this.htines.push(x, y);
     }
   }
