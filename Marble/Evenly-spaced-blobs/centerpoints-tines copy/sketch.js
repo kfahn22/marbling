@@ -37,15 +37,14 @@ function setup() {
     // addInk(i, 10, offsetPoints);
   }
 
-  // Adding tines here!!!! 
-  // 70, 20
+  // Adding tines here!!!!
   for (let drop of drops) {
-    drop.vTine(width * 0.25, 80, 10, 1);
-    // drop.vTine(width * 0.5, 80, 10, 0);
-    // drop.vTine(width * 0.75, 80, 10, 1);
-    // drop.hTine(height * 0.25, 80, 10, 0);
-    // drop.hTine(height * 0.5, 80, 10, 1);
-    // drop.hTine(height * 0.75, 80, 10, 0);
+    drop.vTine(width * 0.25, 70, 20, 1);
+    drop.vTine(width * 0.5, 70, 20, 0);
+    drop.vTine(width * 0.75, 70, 20, 1);
+    drop.hTine(height * 0.25, 70, 20, 0);
+    drop.hTine(height * 0.5, 70, 20, 1);
+    drop.hTine(height * 0.75, 70, 20, 0);
   }
 }
 

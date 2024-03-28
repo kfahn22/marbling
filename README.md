@@ -48,10 +48,10 @@ The parameters z, u(c) control maximum displacement and sharpness of bends. A la
      <td align="center"><a href=""> <img class="img" src="assets/centerBlobs-tines.jpg" alt="Marbling starting fron evenly spaced blobs" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" /><br /><sub><b><br/>Marbling with evenly spaced blobs</b></sub></a></td>
-      <td align="center"><a href=""> <img class="img" src="" alt="" style="vertical-align:top;" width="500" /><br /><sub><b><br/></b></sub></a></td>
+      <td align="center"><a href=""> <img class="img" src="assets/phyllotaxis.jpg" alt="" style="vertical-align:top;" width="500" /><br /><sub><b><br/></b></sub></a></td>
      <td align="center"><a href=""> <img class="img" src="" alt="" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" /><br /><sub><b><br/>Title</b></sub></a></td>
+    margin-right: auto;" width="500" /><br /><sub><b><br/>Ink blobs added with Phyllotaxis </b></sub></a></td>
 </tr>
 
     

@@ -23,7 +23,7 @@ function setup() {
   }
   centerPoints = shuffle(centerPoints);
 
-  console.log(centerPoints)
+  console.log(centerPoints);
   //console.log(sp);
   // Order in which you add ink blobs affects outcome!
   // for (let k = 0; k < 5; k++) {
@@ -39,10 +39,11 @@ function setup() {
   // }
 
   // Blobs added k times at equal intervals
-for (let j = 0; j < 15; j++)
- { for (i = 0; i < centerPoints.length; i++) {
-    addInk(centerPoints[i].x, centerPoints[i].y, blobRadius);
-  }}
+  for (let j = 0; j < 15; j++) {
+    for (i = 0; i < centerPoints.length; i++) {
+      addInk(centerPoints[i].x, centerPoints[i].y, blobRadius);
+    }
+  }
   // for (let drop of drops) {
   //   drop.vTine(width / 4, 20, 16, 1);
   // }
