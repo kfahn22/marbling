@@ -38,7 +38,7 @@ The parameters z, u(c) control maximum displacement and sharpness of bends. A la
     margin-right: auto;" width="500" /><br /><sub><b><br/>Ink blobs added with Phyllotaxis </b></sub></a></td>
 </tr>
     <tr>
-      <td align="center"><a href=""> <img class="img" src="assets/marble-swne.jpg" alt="Marbling with multiple directions" style="vertical-align:top;" width="500" /><br /><sub><b><br/>Marbling with multiple directions</b></sub></a></td>
+      <td align="center"><a href=""> <img class="img" src="assets/marble-swne.jpg" alt="Evenly spaced ink blobs" style="vertical-align:top;" width="500" /><br /><sub><b><br/>Evenly spaced ink blobs</b></sub></a></td>
      <td align="center"><a href=""> <img class="img" src="assets/marble-evenly-spaced.jpg" alt="Marbling starting fron evenly spaced blobs" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" /><br /><sub><b><br/>Evenly spaced ink blobs</b></sub></a></td>

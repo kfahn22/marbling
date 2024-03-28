@@ -1,22 +1,25 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
+
+// Warning--render is slow
+
 let m = 0;
 // let cc = 6;
 
 let drops = [];
 let n = 20;
 
-let z = 40;
-let c = 60;
+// let z = 40;
+// let c = 60;
 let blobRadius;
 let centerPoints = [];
 
 function setup() {
-  createCanvas(400, 400);
-  let sp = width / (0.9 * n);
-  phyllotaxis(50, sp);
+  createCanvas(800, 800);
+  let sp = width / (1.8 * n);
+  phyllotaxis(100, sp);
 
   translate(width / 2, height / 2);
-  
+
   for (let i = 0; i < centerPoints.length; i++) {
     addInk(i, 10, 20, centerPoints);
   }

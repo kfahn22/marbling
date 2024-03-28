@@ -20,7 +20,7 @@ class Drop {
       this.startPoints.push(sp / 2 + sp * i);
     }
     this.vertices = [];
-    let sc = 10;
+    let sc = 14; // 10
     // add gear curve
     for (let i = 0; i < circleDetail; i += 1) {
       let angle = map(i, 0, circleDetail, 0, TWO_PI);
@@ -33,7 +33,7 @@ class Drop {
     }
     this.vtines = [];
     this.htines = [];
-    this.col = random(color7);
+    this.col = random(colorsCT);
   }
 
   marble(other) {
