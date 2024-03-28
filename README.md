@@ -28,24 +28,24 @@ The parameters z, u(c) control maximum displacement and sharpness of bends. A la
 <table>
   <tbody>
   <tr>
-      <td align="center"><a href=""> <img class="img" src="assets/centerpoints.jpg" alt="Marbling with evenly spaced blobs" style="vertical-align:top;" width="500" /><br /><sub><b><br/>Marbling with evenly spaced blobs - no tines</b></sub></a></td>
-      <td align="center"><a href=""> <img class="img" src="assets/knobs.jpg" alt="Ink blobs with knobs" style="vertical-align:top;" width="500" /><br /><sub><b><br/>Ink blobs with knobs</b></sub></a></td>
+      <td align="center"><a href=""> <img class="img" src="assets/centerpoints.jpg" alt="Marbling with evenly spaced blobs" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Marbling with evenly spaced blobs - no tines</b></sub></a></td>
+      <td align="center"><a href=""> <img class="img" src="assets/knobs.jpg" alt="Ink blobs with knobs" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Ink blobs with knobs</b></sub></a></td>
        <td align="center"><a href=""> <img class="img" src="assets/adding-gears.jpg" alt="Using gear curve instead of circle" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" /><br /><sub><b><br/>Using gear curve instead of circle</b></sub></a></td>
+    margin-right: auto;" width="600" /><br /><sub><b><br/>Using gear curve instead of circle</b></sub></a></td>
      <td align="center"><a href=""> <img class="img" src="assets/phyllotaxis.jpg" alt="" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" /><br /><sub><b><br/>Ink blobs added with Phyllotaxis </b></sub></a></td>
+    margin-right: auto;" width="600" /><br /><sub><b><br/>Ink blobs added with Phyllotaxis </b></sub></a></td>
 </tr>
     <tr>
-      <td align="center"><a href=""> <img class="img" src="assets/marble-swne.jpg" alt="Evenly spaced ink blobs" style="vertical-align:top;" width="500" /><br /><sub><b><br/>Evenly spaced ink blobs</b></sub></a></td>
+      <td align="center"><a href=""> <img class="img" src="assets/marble-swne.jpg" alt="Evenly spaced ink blobs" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Evenly spaced ink blobs</b></sub></a></td>
      <td align="center"><a href=""> <img class="img" src="assets/marble-evenly-spaced.jpg" alt="Marbling starting fron evenly spaced blobs" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" /><br /><sub><b><br/>Evenly spaced ink blobs</b></sub></a></td>
-      <td align="center"><a href=""> <img class="img" src="assets/marble-center.jpg" alt="Marbling with central blobs" style="vertical-align:top;" width="500" /><br /><sub><b><br/>Marbling with central ink blobs</b></sub></a></td>
+    margin-right: auto;" width="600" /><br /><sub><b><br/>Evenly spaced ink blobs</b></sub></a></td>
+      <td align="center"><a href=""> <img class="img" src="assets/marble-center.jpg" alt="Marbling with central blobs" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Marbling with central ink blobs</b></sub></a></td>
     <td align="center"><a href=""> <img class="img" src="assets/centerBlobs-tines.jpg" alt="Marbling starting fron evenly spaced blobs" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" /><br /><sub><b><br/>Marbling with evenly spaced blobs</b></sub></a></td>
+    margin-right: auto;" width="600" /><br /><sub><b><br/>Marbling with evenly spaced blobs</b></sub></a></td>
 </tr>
 
 
