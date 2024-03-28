@@ -4,8 +4,6 @@ Paper marbling is a captivating traditional art form that involves floating pain
 
 The art of paper marbling requires both skill and creativity, as artists must master the delicate balance of paint consistency, surface tension, and timing to create stunning and harmonious designs. Mathematical marbling, also known as computational or digital marbling, is a cool way of making patterns that look like those made with traditional paper marbling, but it's done using math and computers instead of paints and trays.
 
-Here's how it works in simple terms: Imagine you have a grid, like graph paper. Each square on the grid can be colored in different ways, just like how you'd put different colored paints on the surface in traditional marbling. Instead of dropping paint, though, we use mathematical equations to figure out how to color each square based on its position and its relationship with neighboring squares.
-
 Base [code](https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr) from [Daniel Shiffman](https://thecodingtrain.com) - Mathematical Marbling Coding Challenge coming soon.
 
 ### Dropping the paint
@@ -35,7 +33,7 @@ The parameters z, u(c) control maximum displacement and sharpness of bends. A la
     margin-right: auto;" width="600" /><br /><sub><b><br/>Using gear curve instead of circle</b></sub></a></td>
      <td align="center"><a href=""> <img class="img" src="assets/phyllotaxis.jpg" alt="" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="600" /><br /><sub><b><br/>Ink blobs added with Phyllotaxis </b></sub></a></td>
+    margin-right: auto;" width="600" /><br /><sub><b><br/>Jello Mold (Blobs added using Phyllotaxis)</b></sub></a></td>
 </tr>
     <tr>
       <td align="center"><a href=""> <img class="img" src="assets/marble-swne.jpg" alt="Evenly spaced ink blobs" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Evenly spaced ink blobs</b></sub></a></td>
