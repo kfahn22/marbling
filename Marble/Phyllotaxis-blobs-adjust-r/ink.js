@@ -1,36 +1,31 @@
-const circleDetail = 500;
+const circleDetail = 100;
 
-// let colors = [
-//   [18, 69, 89],
-//   [89, 131, 146],
-//   [174, 195, 176],
-//   [239, 246, 224],
-// ];
-
-let colors = [
-  [160, 238, 192],
-  [138, 233, 193],
-  [134, 205, 130],
-  [114, 162, 118],
-];
+function hyperbolicTan(theta) {
+  let e = 2.71828;
+  let l = pow(e, 2 * theta);
+  return (l - 1) / (l + 1);
+}
 
 class Drop {
   constructor(x, y, r) {
     this.center = createVector(x, y);
     this.r = r;
     this.n = 8;
-    this.z = 30;
-    this.c = 16;
+    this.z = 80;
+    this.c = 32;
     // try to create one than one tine
     let sp = width / this.n;
     this.startPoints = [];
     for (let i = 0; i < this.n; i++) {
       this.startPoints.push(sp / 2 + sp * i);
-      //console.log(this.startPoints);
     }
     this.vertices = [];
-    for (let i = 0; i < circleDetail; i++) {
+    let sc = 10;
+    // add gear curve
+    for (let i = 0; i < circleDetail; i += 1) {
       let angle = map(i, 0, circleDetail, 0, TWO_PI);
+      this.r = sc * (1 + (1 / 10) * hyperbolicTan(10 * sin(10 * angle)));
+      //let r = 1 + (1 / 10) * hyperbolicTan(10 * sin(10 * i));
       let v = createVector(cos(angle), sin(angle));
       v.mult(this.r);
       v.add(this.center);
@@ -38,8 +33,19 @@ class Drop {
     }
     this.vtines = [];
     this.htines = [];
-    this.col = random(color5);
+    this.col = random(color7);
   }
+
+  // showGear() {
+  //   // stroke(this.col);
+  //   // let sw = map(Math.log2(this.radius), 3.4, Math.log2(100), 0.3, 4);
+  //   // strokeWeight(sw);
+  //   // //strokeWeight(0.5 * pow(this.radius, 0.3));
+  //   push();
+  //   setCenter(this.center.a, this.center.b);
+  //   polarGear(0, this.radius * 2, this.radius, 20);
+  //   pop();
+  // }
 
   // Function that adds starting points for tines
   addPoints() {
@@ -49,17 +55,17 @@ class Drop {
     }
   }
 
-  // tine(m, x, y, z, c) {
-  //   let u = 1 / pow(2, 1 / c);
-  //   let b = createVector(x, y);
-  //   for (let v of this.vertices) {
-  //     let pb = p5.Vector.sub(v, b);
-  //     let n = m.copy().rotate(HALF_PI);
-  //     let d = abs(pb.dot(n));
-  //     let mag = z * pow(u, d);
-  //     v.add(m.copy().mult(mag));
-  //   }
-  // }
+  tine(m, x, y, z, c) {
+    let u = 1 / pow(2, 1 / c);
+    let b = createVector(x, y);
+    for (let v of this.vertices) {
+      let pb = p5.Vector.sub(v, b);
+      let n = m.copy().rotate(HALF_PI);
+      let d = abs(pb.dot(n));
+      let mag = z * pow(u, d);
+      v.add(m.copy().mult(mag));
+    }
+  }
 
   // need to shuffle or they will be correlated
   //  let startX = shuffle(startPoints);
@@ -161,15 +167,22 @@ class Drop {
       let m = p.mag();
       // magsquared
       let root = sqrt(1 + (r * r) / (m * m));
-      // adding a coefficient to root really changes the look
-      p.mult(0.99 * root);
+      p.mult(root);
       p.add(c);
       v.set(p);
     }
   }
 
   show() {
+    // let col = color(98, 59, 90);
+    // let col2 = color(186, 149, 147);
+    // let mycol = lerpColor(
+    //   col,
+    //   col2,
+    //   map(Math.log2(this.r), 1, Math.log2(40), 1, 30)
+    // );
     fill(this.col);
+    //fill(mycol);
     noStroke();
     beginShape();
     for (let v of this.vertices) {

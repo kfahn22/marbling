@@ -159,8 +159,10 @@ class Drop {
       let p = v.copy();
       p.sub(c);
       let m = p.mag();
+      let alpha = 0.9;
       // magsquared
       let root = sqrt(1 + (r * r) / (m * m));
+      // let root = sqrt(1 + ((r * r) / alpha) * (m * m));
       p.mult(root);
       p.add(c);
       v.set(p);

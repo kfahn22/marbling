@@ -1,19 +1,10 @@
-const circleDetail = 500;
+const circleDetail = 100;
 
-// let colors = [
-//   [18, 69, 89],
-//   [89, 131, 146],
-//   [174, 195, 176],
-//   [239, 246, 224],
-// ];
-
-let colors = [
-  [160, 238, 192],
-  [138, 233, 193],
-  [134, 205, 130],
-  [114, 162, 118],
-];
-
+function hyperbolicTan(theta) {
+  let e = 2.71828;
+  let l = pow(e, 2 * theta);
+  return (l - 1) / (l + 1);
+}
 class Drop {
   constructor(x, y, r) {
     this.center = createVector(x, y);
@@ -21,6 +12,7 @@ class Drop {
     this.n = 8;
     this.z = 30;
     this.c = 16;
+
     // try to create one than one tine
     let sp = width / this.n;
     this.startPoints = [];
@@ -29,12 +21,21 @@ class Drop {
       //console.log(this.startPoints);
     }
     this.vertices = [];
+    let sc = 40;
     for (let i = 0; i < circleDetail; i++) {
       let angle = map(i, 0, circleDetail, 0, TWO_PI);
+      this.r = sc * (1 + (1 / 10) * hyperbolicTan(10 * sin(10 * angle)));
+      //let r = 1 + (1 / 10) * hyperbolicTan(10 * sin(10 * i));
       let v = createVector(cos(angle), sin(angle));
       v.mult(this.r);
       v.add(this.center);
       this.vertices[i] = v;
+
+      // let angle = map(i, 0, circleDetail, 0, TWO_PI);
+      // let v = createVector(cos(angle), sin(angle));
+      // v.mult(this.r);
+      // v.add(this.center);
+      // this.vertices[i] = v;
     }
     this.vtines = [];
     this.htines = [];
@@ -162,7 +163,7 @@ class Drop {
       // magsquared
       let root = sqrt(1 + (r * r) / (m * m));
       // adding a coefficient to root really changes the look
-      p.mult(0.99 * root);
+      p.mult(root);
       p.add(c);
       v.set(p);
     }
