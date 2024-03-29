@@ -1,12 +1,26 @@
-const circleDetail = 200;
+const circleDetail = 500;
+
+// let colors = [
+//   [18, 69, 89],
+//   [89, 131, 146],
+//   [174, 195, 176],
+//   [239, 246, 224],
+// ];
+
+let colors = [
+  [160, 238, 192],
+  [138, 233, 193],
+  [134, 205, 130],
+  [114, 162, 118],
+];
 
 class Drop {
   constructor(x, y, r) {
     this.center = createVector(x, y);
     this.r = r;
     this.n = 8;
-    this.z = 80;
-    this.c = 30;
+    this.z = 30;
+    this.c = 16;
     // try to create one than one tine
     let sp = width / this.n;
     this.startPoints = [];
@@ -34,17 +48,7 @@ class Drop {
       this.startPoints.push(sp * i * 1.5);
     }
   }
-  tine(end, begin, angle) {
-    let u = 1 / pow(2, 1 / this.c);
-    //let b = createVector(x, y);
-    for (let v of this.vertices) {
-      let pb = p5.Vector.sub(v, begin);
-      let n = end.copy().rotate(angle);
-      let d = abs(pb.dot(n));
-      let mag = this.z * pow(u, d);
-      v.add(end.copy().mult(mag));
-    }
-  }
+
   // tine(m, x, y, z, c) {
   //   let u = 1 / pow(2, 1 / c);
   //   let b = createVector(x, y);
@@ -157,7 +161,8 @@ class Drop {
       let m = p.mag();
       // magsquared
       let root = sqrt(1 + (r * r) / (m * m));
-      p.mult(root);
+      // adding a coefficient to root really changes the look
+      p.mult(0.99 * root);
       p.add(c);
       v.set(p);
     }

@@ -65,8 +65,6 @@ The parameters z, u(c) control maximum displacement and sharpness of bends. A la
 - [Divergence](https://en.wikipedia.org/wiki/Divergence)
 - [Efficient and Conservative Fluids Using Bidirectional Mapping](https://www.seas.upenn.edu/~ziyinq/static/files/bimocq.pdf)
 - [Fluid Simulation (with WebGL demo)](https://jamie-wong.com/2016/08/05/webgl-fluid-simulation/)
-- [Marblizer](https://github.com/nickswalker/marblizer)
-- [Marblizer App](https://marblizer.nickwalker.us)
 - [Mathematical Marbling](http://www.cad.zju.edu.cn/home/jin/cga2012/mmarbling.pdf)
 - [Marbled Paper Patterns](https://content.lib.washington.edu/dpweb/patterns.html)
 - [Mabling experiment](https://github.com/amandaghassaei/marbling-experiment/blob/main/src/simulation.ts)
@@ -78,8 +76,10 @@ The parameters z, u(c) control maximum displacement and sharpness of bends. A la
 
 ## Videos
 
-[The Hydrodynamics of Marbling Art](https://www.youtube.com/watch?v=yzlPvtDmtAE)
+- [The Hydrodynamics of Marbling Art](https://www.youtube.com/watch?v=yzlPvtDmtAE)
 
 ## Code
 
-[incrmt](https://github.com/chr1shr/incrmt)
+- [incrmt](https://github.com/chr1shr/incrmt)
+- [Marblizer](https://github.com/nickswalker/marblizer)
+- [Marblizer App](https://marblizer.nickwalker.us)

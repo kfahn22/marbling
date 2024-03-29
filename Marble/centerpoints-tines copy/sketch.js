@@ -1,7 +1,7 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
 let drops = [];
-let n = 4;
+let n = 8;
 
 let z = 40;
 let c = 60;
@@ -10,61 +10,63 @@ let centerPoints = [];
 let offsetPoints = [];
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(400, 400);
   let sp = width / n;
   blobRadius = width / (3 * n);
 
   for (let i = sp; i < width; i += sp) {
     for (let j = sp; j < height; j += sp) {
       centerPoints.push(createVector(i, j));
-      // centerPoints.push(createVector(i + sp / 2, j + sp / 2));
     }
   }
 
-  // for (let i = sp / 2; i < width; i += sp) {
-  //   for (let j = sp / 2; j < height; j += sp) {
-  //     offsetPoints.push(createVector(i, j));
-  //   }
-  // }
-
   centerPoints = shuffle(centerPoints);
   //offsetPoints = shuffle(offsetPoints);
-  let l = centerPoints.length;
-  console.log(l);
+  // let l = centerPoints.length;
+  // console.log(l);
   // Deformation of blobs depends on order in which they are added
   for (let i = 0; i < centerPoints.length; i++) {
     addInk(i, 6, centerPoints);
-    // addInk(i, 10, offsetPoints);
   }
-  let begin = createVector(0, height / 2);
-  let end = createVector(width, height / 2);
+  // let begin = createVector(0, height / 2);
+  // let end = createVector(width, height / 2);
+  let begin = createVector(0, height * 0.5);
+  let end = createVector(width, height* 0.5);
   end.normalize();
-  // Adding tines here!!!!
-  // 70, 20
-  for (let drop of drops) {
-    //drop.vTine(width * 0.25, 80, 10, 1);
-    // drop.vTine(width * 0.5, 80, 10, 0);
-    // drop.vTine(width * 0.75, 80, 10, 1);
-    // drop.hTine(height * 0.25, 80, 10, 0);
-    // drop.hTine(height * 0.5, 80, 10, 1);
-    // drop.hTine(height * 0.75, 80, 10, 0);
-    drop.tine(end, begin, PI/2);
-    drop.tine(end, createVector(begin.x+sp, begin.y), -PI / 2);
-     drop.tine(end, createVector(begin.x + 2*sp, begin.y), PI / 2);
-     drop.tine(end, createVector(begin.x + 3 * sp, begin.y), -PI / 2);
-  }
+  tineLines(end, begin, sp, -PI/3);
 }
 
 // north() & south() cancel each other out
 // east() & west() cancel each other out
-function tineLines() {
+function tineLines(e, b, sp, angle) {
   for (let drop of drops) {
-    //drop.north();
-    //drop.south();
-    //drop.east();
-    //drop.west();
-    //drop.combine(1, 1);
-    drop.combine();
+    for (let i = 0; i < 1; i++) {
+      let end = createVector(e.x + sp * i, e.y + sp * i);
+      end.normalize;
+      let begin = createVector(b.x + sp * i, b.y + sp * i);
+
+      drop.tine(end, begin, angle);
+      // drop.tine(end, begin, PI / 2);
+      // drop.tine(end, createVector(begin.x + sp, begin.y), -PI / 2);
+      // drop.tine(end, createVector(begin.x + 2 * sp, begin.y), PI / 2);
+      // drop.tine(end, createVector(begin.x + 3 * sp, begin.y), -PI / 2);
+      // if (i % 2 === 0) {
+      //   drop.tine(end, begin, angle);
+      // } else {
+      //   drop.tine(end, begin, -angle);
+      // }
+      //  drop.tine(createVector(end.x + sp, end.y), createVector(begin.x + sp, begin.y), -PI / 2);
+      //  drop.tine(
+      //    createVector(end.x + 3* sp, end.y),
+      //    createVector(begin.x + 2 * sp, begin.y),
+      //    PI / 2
+      //  );
+      //  drop.tine(
+      //    createVector(end.x + 3* sp, end.y),
+      //    createVector(begin.x + 3 * sp, begin.y),
+      //    -PI / 2
+      //  );}
+    }
   }
 }
 
