@@ -1,7 +1,7 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
 let drops = [];
-let n = 4; 
+let n = 4;
 let centerPoints = [];
 
 function setup() {
@@ -9,23 +9,19 @@ function setup() {
   let sp = width / n;
   let blobRadius = (width / 3) * n;
 
-  for (let i = 0; i < 20; i++)
-  {for (let i = sp; i < width; i += sp) {
-    for (let j = sp; j < height; j += sp) {
-      //centerPoints.push(createVector(i, j));
-      addInk(i, j, blobRadius);
+  for (let i = 0; i < 20; i++) {
+    for (let i = sp; i < width; i += sp) {
+      for (let j = sp; j < height; j += sp) {
+        addInk(i, j, blobRadius);
+      }
     }
-  }}
-}
-  //centerPoints = shuffle(centerPoints);
+  }
 
-  // Blobs added k times at equal intervals
-//   for (let j = 0; j < 20; j++) {
-//     for (i = 0; i < centerPoints.length; i++) {
-//       addInk(centerPoints[i].x, centerPoints[i].y, blobRadius);
-//     }
-//   }
-// }
+  let begin = createVector(0, height * 0.5);
+  let end = createVector(width, height * 0.5);
+  end.normalize();
+  tineLines(end, begin, sp, -PI / 3);
+}
 
 function mousePressed() {
   save("marble.jpg");
@@ -45,4 +41,16 @@ function draw() {
     drop.show();
   }
   noLoop();
+}
+
+function tineLines(e, b, sp, angle) {
+  for (let drop of drops) {
+    for (let i = 0; i < 1; i++) {
+      let end = createVector(e.x + sp * i, e.y + sp * i);
+      end.normalize;
+      let begin = createVector(b.x + sp * i, b.y + sp * i);
+
+      drop.tine(end, begin, angle);
+    }
+  }
 }

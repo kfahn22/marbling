@@ -28,6 +28,18 @@ class Drop {
     this.col = random(color7);
   }
 
+  tine(end, begin, angle) {
+    let u = 1 / pow(2, 1 / this.c);
+    //let b = createVector(x, y);
+    for (let v of this.vertices) {
+      let pb = p5.Vector.sub(v, begin);
+      let n = end.copy().rotate(angle);
+      let d = abs(pb.dot(n));
+      let mag = this.z * pow(u, d);
+      v.add(end.copy().mult(mag));
+    }
+  }
+  
   marble(other) {
     for (let v of this.vertices) {
       let c = other.center;

@@ -5,8 +5,8 @@ class Drop {
     this.center = createVector(x, y);
     this.r = r;
     this.n = 8;
-    this.z = 80;
-    this.c = 30;
+    this.z = 60;
+    this.c = 20;
     // try to create one than one tine
     let sp = width / this.n;
     this.startPoints = [];
@@ -34,17 +34,85 @@ class Drop {
       this.startPoints.push(sp * i * 1.5);
     }
   }
-  tine(end, begin, angle) {
-    let u = 1 / pow(2, 1 / this.c);
-    //let b = createVector(x, y);
+
+  // vertical tine
+  vTine(x, z, c, dir) {
+    let u = 1 / pow(2, 1 / c);
     for (let v of this.vertices) {
-      let pb = p5.Vector.sub(v, begin);
-      let n = end.copy().rotate(angle);
-      let d = abs(pb.dot(n));
-      let mag = this.z * pow(u, d);
-      v.add(end.copy().mult(mag));
+      v.x = v.x;
+      // v.y = v.y + dir * z * pow(u, abs(v.x - x));
+      if (dir === 0) {
+        v.y = v.y + z * pow(u, abs(v.x - x));
+      } else if (dir === 1) {
+        v.y = v.y - z * pow(u, abs(v.x - x));
+      }
     }
   }
+
+  //https://p5js.org/reference/#/p5/applyMatrix
+  // try with matrix math
+  // tine(end, begin, angle) {
+  //   let u = 1 / pow(2, 1 / this.c);
+  //   //let b = createVector(x, y);
+  //   for (let v of this.vertices) {
+  //     let pb = p5.Vector.sub(v, begin);
+  //     const mat = applyMatrix(
+  //       cos(angle),
+  //       sin(angle),
+  //       -sin(angle),
+  //       cos(angle),
+  //       0,
+  //       0
+  //     );
+  //     //let n = end.copy().rotate(angle);
+  //     //let d = abs(pb.dot(n));
+  //     let d = abs(pb.mult(mat));
+  //     let mag = this.z * pow(u, d);
+  //     v.add(end.copy().mult(mag));
+  //   }
+  // }
+
+  // general purpose - working
+  tine(end, begin, angle) {
+    let u = 1 / pow(2, 1 / this.c);
+    for (let v of this.vertices) {
+      if (end != null) {
+        let pb = p5.Vector.sub(v, begin);
+        let n = end.copy().rotate(angle);
+        let d = abs(pb.dot(n));
+        let mag = this.z * pow(u, d);
+        v.add(end.copy().mult(mag));
+      } else if (begin.y === 0) {
+        v.x = v.x;
+        v.y = v.y + this.z * pow(u, abs(v.x - begin.x));
+      } else if (begin.x === 0) {
+        v.y = v.y;
+        v.x = v.x + this.z * pow(u, abs(v.y - begin.y));
+      }
+    }
+  }
+
+  // try to incorporate direction of vert/horz tines
+  // dir 1 or -1
+  tine(end, begin, angle, dir) {
+    let u = 1 / pow(2, 1 / this.c);
+    for (let v of this.vertices) {
+      if (end != null) {
+        let pb = p5.Vector.sub(v, begin);
+        let n = end.copy().rotate(angle);
+        let d = abs(pb.dot(n));
+        let mag = this.z * pow(u, d);
+        v.add(end.copy().mult(mag));
+      } else if (begin.y === 0) {
+        v.x = v.x;
+        v.y = v.y + dir * this.z * pow(u, abs(v.x - begin.x));
+      } else if (begin.x === 0) {
+        v.y = v.y;
+        v.x = v.x + dir * this.z * pow(u, abs(v.y - begin.y));
+      }
+    }
+  }
+
   // tine(m, x, y, z, c) {
   //   let u = 1 / pow(2, 1 / c);
   //   let b = createVector(x, y);

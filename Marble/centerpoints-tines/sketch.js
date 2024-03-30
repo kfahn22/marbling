@@ -48,10 +48,10 @@ function setup() {
     // drop.hTine(height * 0.25, 80, 10, 0);
     // drop.hTine(height * 0.5, 80, 10, 1);
     // drop.hTine(height * 0.75, 80, 10, 0);
-    drop.tine(end, begin, PI/2);
-    drop.tine(end, createVector(begin.x+sp, begin.y), -PI / 2);
-     drop.tine(end, createVector(begin.x + 2*sp, begin.y), PI / 2);
-     drop.tine(end, createVector(begin.x + 3 * sp, begin.y), -PI / 2);
+    drop.tine(end, begin, PI / 2);
+    drop.tine(end, createVector(begin.x + sp, begin.y), -PI / 2);
+    drop.tine(end, createVector(begin.x + 2 * sp, begin.y), PI / 2);
+    drop.tine(end, createVector(begin.x + 3 * sp, begin.y), -PI / 2);
   }
 }
 
