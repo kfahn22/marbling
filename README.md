@@ -6,15 +6,15 @@ The art of paper marbling requires both skill and creativity, as artists must ma
 
 Base [code](https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr) from [Daniel Shiffman](https://thecodingtrain.com) - Mathematical Marbling Coding Challenge coming soon.
 
-The math behind the marblng is from [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics):
+The math behind the marblng is outlined in [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics).
 
-### Dropping the paint
+- Dropping the paint
 
 As "drops" of paint are added, the existing particles (or points) of paint are displaced. This equation shows how to calculate the new position as additional "drops" of paint are added.
 
 $C + (P - C) \cdot \sqrt{1 + \frac{r^2}{\lVert P - C \rVert^2}}$
 
-This is implemented in the marble function in the addInk class.
+This is implemented by Dainel Shiffman in the marble function in the Drop class.
 
 ```javascript
 marble(other) {
@@ -32,15 +32,29 @@ marble(other) {
   }
 ```
 
-### Adding the tine strokes
+- Adding the Tine Strokes
 
 $F_v(x, y) = (x, y + z \cdot u |x - x_L|)$
 
 $u = \frac{1}{2}^\frac{1}{c}$
 
-The parameters z, u(c) control maximum displacement and sharpness of bends. A larger z yields a larger displacement, while a smaller c results in sharper bends.
+The parameters z, u(c) control maximum displacement and sharpness of bends. A larger z yields a larger displacement, while a smaller c results in sharper bends. This was implemented in the tines function in the Drop class.
 
-## 🌄 Gallery
+```javacript
+tine(m, x, y, z, c) {
+    let u = 1 / pow(2, 1 / c);
+    let b = createVector(x, y);
+    for (let v of this.vertices) {
+      let pb = p5.Vector.sub(v, b);
+      let n = m.copy().rotate(HALF_PI);
+      let d = abs(pb.dot(n));
+      let mag = z * pow(u, d);
+      v.add(m.copy().mult(mag));
+    }
+  }
+```
+
+## Gallery
 
 <!-- IMAGE-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
