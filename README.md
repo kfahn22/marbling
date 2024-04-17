@@ -10,7 +10,27 @@ The math behind the marblng is from [The Mathematics of Marbling](http://people.
 
 ### Dropping the paint
 
+As "drops" of paint are added, the existing particles (or points) of paint are displaced. This equation shows how to calculate the new position as additional "drops" of paint are added.
+
 $C + (P - C) \cdot \sqrt{1 + \frac{r^2}{\lVert P - C \rVert^2}}$
+
+This is implemented in the marble function in the addInk class.
+
+```javascript
+marble(other) {
+    for (let v of this.vertices) {
+      let c = other.center;
+      let r = other.r;
+      let p = v.copy();
+      p.sub(c);
+      let m = p.mag();
+      let root = sqrt(1 + (r * r) / (m * m));
+      p.mult(root);
+      p.add(c);
+      v.set(p);
+    }
+  }
+```
 
 ### Adding the tine strokes
 
