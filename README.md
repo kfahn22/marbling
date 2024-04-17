@@ -32,7 +32,7 @@ marble(other) {
   }
 ```
 
-Since the order in which you add the drops of paint matters, I am adding all of the paint at once in evenly spaced blobs. Additionally, if you edit `p.mult(root)` slightly to `p.mult(0.99*root)` you can get some interesting effects (shown in the first two images). You can also substitute a gear shape in place of a circle and add the blobs of paint in a phyllotaxis pattern (shown in last image in the first row, warning--this is compute heavy!)
+Since the order in which you add the drops of paint matters, I have randomized the order in which the blobs of paint are added. Additionally, if you edit `p.mult(root)` slightly to `p.mult(0.99*root)` you can get some interesting effects (shown in the first two images). You can also substitute a gear shape in place of a circle and add the blobs of paint in a phyllotaxis pattern (shown in last image in the first row, warning--this is compute heavy!)
 
 **Adding the Tine Strokes**
 
