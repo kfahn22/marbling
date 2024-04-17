@@ -6,7 +6,7 @@ The art of paper marbling requires both skill and creativity, as artists must ma
 
 Base [code](https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr) from [Daniel Shiffman](https://thecodingtrain.com) - Mathematical Marbling Coding Challenge coming soon.
 
-The math behind the marblng is outlined in [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics).
+The math behind the marbling is outlined in [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics).
 
 **Dropping the Paint**
 
@@ -96,6 +96,8 @@ tine(m, x, y, z, c) {
 
 ### History of Marbling
 
+- [The Art of Marbled Paper: Dynamic Fluids in Flow](https://www.metmuseum.org/articles/marbled-paper)
+- [The Art of Ebru](https://www.baytalfann.com/post/the-art-of-ebru)
 - [Suminagashi - The Ancient Art of Japanese Marbling](https://suminagashi.com/history/)
 
 ## References
