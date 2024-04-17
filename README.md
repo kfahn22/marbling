@@ -94,6 +94,10 @@ tine(m, x, y, z, c) {
 
 <!-- IMAGE-LIST:END -->
 
+### History of Marbling
+
+- [Suminagashi - The Ancient Art of Japanese Marbling](https://suminagashi.com/history/)
+
 ## References
 
 - [A Computational Method for Interactive Design of Marbling Patterns](https://www.researchgate.net/publication/330940964_A_Computational_Method_for_Interactive_Design_of_Marbling_Patterns/link/5e42f45492851c7f7f2f9031/download?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InB1YmxpY2F0aW9uIn19)
