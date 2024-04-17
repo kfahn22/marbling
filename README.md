@@ -6,11 +6,13 @@ The art of paper marbling requires both skill and creativity, as artists must ma
 
 Base [code](https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr) from [Daniel Shiffman](https://thecodingtrain.com) - Mathematical Marbling Coding Challenge coming soon.
 
+The math behind the marblng is from [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics):
+
 ### Dropping the paint
 
-### Adding the tine strokes
+$C + (P - C) \cdot \sqrt{1 + \frac{r^2}{\lVert P - C \rVert^2}}$
 
-From [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics):
+### Adding the tine strokes
 
 $F_v(x, y) = (x, y + z \cdot u |x - x_L|)$
 
