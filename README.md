@@ -8,7 +8,7 @@ Base [code](https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr) from [Daniel
 
 The math behind the marblng is outlined in [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics).
 
-- Dropping the paint
+**Dropping the Paint**
 
 As "drops" of paint are added, the existing particles (or points) of paint are displaced. This equation shows how to calculate the new position as additional "drops" of paint are added.
 
@@ -32,15 +32,15 @@ marble(other) {
   }
 ```
 
-Since the order in which you add the drops of paint matters, I am adding all of the paint at one in evenly spaced blobs.  Additionally, if you edit ```p.mult(root)``` slightly to ```p.mult(0.99*root)``` you can get some interesting effects (shown in the first two images). You can also substitute a gear shape in place of a circle and add in a phyllotaxis pattern (shown in last image in the first row, warning--this is compute heavy!)
+Since the order in which you add the drops of paint matters, I am adding all of the paint at once in evenly spaced blobs. Additionally, if you edit `p.mult(root)` slightly to `p.mult(0.99*root)` you can get some interesting effects (shown in the first two images). You can also substitute a gear shape in place of a circle and add in a phyllotaxis pattern (shown in last image in the first row, warning--this is compute heavy!)
 
-- Adding the Tine Strokes
+**Adding the Tine Strokes**
 
 $F_v(x, y) = (x, y + z \cdot u |x - x_L|)$
 
 $u = \frac{1}{2}^\frac{1}{c}$
 
-The parameters z, u(c) control maximum displacement and sharpness of bends. A larger z yields a larger displacement, while a smaller c results in sharper bends. This was implemented in the tine function in the Drop class, which adds a single tine stroke at a random angle using the mouse.  I have edited the code to add a variable number of verticle / horizontal tine strokes.
+The parameters z, u(c) control maximum displacement and sharpness of bends. A larger z yields a larger displacement, while a smaller c results in sharper bends. This was implemented in the tine function in the Drop class, which adds a single tine stroke at a random angle using the mouse. I have edited the code to add a variable number of verticle / horizontal tine strokes.
 
 ```javacript
 tine(m, x, y, z, c) {
