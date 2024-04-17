@@ -1,4 +1,11 @@
-const circleDetail = 200;
+const circleDetail = 100;
+
+function hyperbolicCos(theta) {
+  let e = 2.71828;
+  let k = pow(e, theta);
+  let l = pow(e, -theta);
+  return (k + l) / 2;
+}
 
 class Drop {
   constructor(x, y, r) {
@@ -8,14 +15,18 @@ class Drop {
     this.z = 60;
     this.c = 20;
     this.vertices = [];
-    for (let i = 0; i < circleDetail; i++) {
+    let sc = 60;
+    // add knob curve
+    for (let i = 0; i < circleDetail; i += 1) {
       let angle = map(i, 0, circleDetail, 0, TWO_PI);
+      this.r = sc * (1 + (1 / 10) * hyperbolicCos(2 * sin(10 * angle)));
+      //let r = 1 + (1 / 10) * hyperbolicTan(10 * sin(10 * i));
       let v = createVector(cos(angle), sin(angle));
       v.mult(this.r);
       v.add(this.center);
       this.vertices[i] = v;
     }
-    this.col = random(color6);
+    this.col = random(color7);
   }
 
   // general purpose - working

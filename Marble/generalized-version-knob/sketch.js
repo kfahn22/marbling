@@ -3,8 +3,6 @@
 let drops = [];
 let n = 20;
 let sp;
-let z = 40;
-let c = 60;
 let blobRadius;
 let centerPoints = [];
 
@@ -12,7 +10,7 @@ function setup() {
   createCanvas(400, 400);
   sp = width / n;
   //blobRadius = width / (2 * n);
-  blobRadius = 20;
+  blobRadius = 5;
   for (let i = sp; i < width; i += sp) {
     for (let j = sp; j < height; j += sp) {
       centerPoints.push(createVector(i, j));
@@ -22,23 +20,22 @@ function setup() {
   centerPoints = shuffle(centerPoints);
 
   // Add evenly spaced blobs of ink
-  // This renders slowly if second parameter > 1
-  for (let i = 0; i < centerPoints.length; i++) {
-    addInk(i, 1, centerPoints);
-  }
+  // for (let i = 0; i < centerPoints.length; i++) {
+  //   addInk(i, 3, centerPoints);
+  // }
 
   // Add ink blobs in center of canvas
-  // for (let i = 0; i < 100; i++) {
-  //   addDrops(width / 2, height / 2, blobRadius);
-  // }
+  for (let i = 0; i < 50; i++) {
+    addDrops(width / 2, height / 2, blobRadius);
+  }
 
   // nv, nh, vdir, hdir, vz, vc, hz, hc
 
   // For ink in center
-  //hvTines(6, 6, 1, -1, 30, 10, 30, 10);
+  hvTines(4, 12, 1, -1, 60, 10, 80, 30);
 
   // For evenly spaced blobs
-  hvTines(4, 0, 1, -1, 80, 16, 30, 10);
+  // hvTines(4, 0, 1, -1, 80, 16, 30, 10);
 }
 
 // Function to add a horizontal or vertical comb
@@ -51,9 +48,9 @@ function hvTines(nv, nh, vdir, hdir, vz, vc, hz, hc) {
       // Alternating horizontal tines
       for (let i = 0; i < nh; i++) {
         if ((i + 1) % 2 == 0) {
-          hdir = -1;
-        } else {
           hdir = 1;
+        } else {
+          hdir = -1;
         }
         drop.tine(
           null,
@@ -115,7 +112,7 @@ function addInk(i, n, points) {
 }
 
 function draw() {
-  background(color6[4]);
+  background(color7[4]);
   for (let drop of drops) {
     drop.show();
   }
