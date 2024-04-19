@@ -112,10 +112,14 @@ tine(m, x, y, z, c) {
 - [Mathematical Marbling](http://www.cad.zju.edu.cn/home/jin/cga2012/mmarbling.pdf)
 - [Marbled Paper Patterns](https://content.lib.washington.edu/dpweb/patterns.html)
 - [Mabling experiment](https://github.com/amandaghassaei/marbling-experiment/blob/main/src/simulation.ts)
-- [Mathematical Marbling How-To](https://people.csail.mit.edu/jaffer/Marbling/How-To) -[Oseen Flow in Paint Marbling](https://arxiv.org/pdf/1702.02106.pdf)
+- [Mathematical Marbling How-To](https://people.csail.mit.edu/jaffer/Marbling/How-To)
+- [Oseen Flow in Paint Marbling](https://arxiv.org/pdf/1702.02106.pdf)
 - [Stable Fluids](https://www.dgp.toronto.edu/public_user/stam/reality/Research/pdf/ns.pdf)
 - [The Hydrodynamics of Marbling](https://fyfluiddynamics.com/2023/12/the-hydrodynamics-of-marbling/)
-- [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics) -[Winning Videos Feature Marbling Paint and Freezing Flashes](https://physics.aps.org/articles/v16/201)
+- [The Mathematics of Marbling](http://people.csail.mit.edu/jaffer/Marbling/Mathematics)
+- [Trying out digital marbling](https://theartsquirrel.com/2968/trying-out-digital-marbling/)
+- [Winning Videos Feature Marbling Paint and Freezing Flashes](https://physics.aps.org/articles/v16/201)
+- [The Lamb-Oseen Vortex and Paint Marbling](https://arxiv.org/pdf/1810.04646.pdf)
 - [Watermarble Simulator](https://github.com/rinsavs/watermarble_simulator)
 
 ## Videos
@@ -127,3 +131,5 @@ tine(m, x, y, z, c) {
 - [incrmt](https://github.com/chr1shr/incrmt)
 - [Marblizer](https://github.com/nickswalker/marblizer)
 - [Marblizer App](https://marblizer.nickwalker.us)
+- [Watermarble Simulator](https://github.com/rinsavs/watermarble_simulator)
+- [MarblingModoki_1.0](https://openprocessing.org/sketch/1349418)
