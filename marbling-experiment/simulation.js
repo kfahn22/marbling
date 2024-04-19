@@ -1,15 +1,17 @@
-import {
-  GPUComposer,
-  GPUProgram,
-  GPULayer,
-  SHORT,
-  INT,
-  FLOAT,
-  NEAREST,
-  LINEAR,
-  REPEAT,
-} from "gpu-io";
+// import {
+//   GPUComposer,
+//   GPUProgram,
+//   GPULayer,
+//   SHORT,
+//   INT,
+//   FLOAT,
+//   NEAREST,
+//   LINEAR,
+//   REPEAT,
+// } from "gpu-io";
 
+import pkg from "gpu-io";
+console.log(pkg);
 // const {
 //   GPUComposer,
 //   GPULayer,
@@ -41,7 +43,7 @@ const PARTICLE_LIFETIME = 1000;
 const NUM_JACOBI_STEPS = 5;
 const PRESSURE_CALC_ALPHA = -1;
 const PRESSURE_CALC_BETA = 0.25;
-const PARAMS = {
+export const PARAMS = {
   VELOCITY_DECAY: 1,
 };
 const VELOCITY_TOUCH_RADIUS = 30;

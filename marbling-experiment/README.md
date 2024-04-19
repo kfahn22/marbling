@@ -54,7 +54,7 @@ const document = window.document;
 console.log(document.querySelector("h1").textContent);
 ```
 
-`
+Current issue  - 
 TODO: look into this more
 
 [gpu-io](https://github.com/amandaghassaei/gpu-io)
