@@ -10,8 +10,10 @@
 //   REPEAT,
 // } from "gpu-io";
 
-import pkg from "gpu-io";
-console.log(pkg);
+// There is an issue importing this library
+// Not sure exactly what to do
+import $ from "gpu-io";
+console.log($);
 // const {
 //   GPUComposer,
 //   GPULayer,
