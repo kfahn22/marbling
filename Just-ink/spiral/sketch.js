@@ -1,9 +1,9 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
-// Warning--render is slow
+// spiral equation from https://mathworld.wolfram.com/ArchimedeanSpiral.html
 
 let m = 0;
-// let cc = 6;
+
 const a = 1;
 const b = 0.2;
 let angle = 0;
@@ -13,58 +13,44 @@ const e = 2.718;
 let drops = [];
 let n = 20;
 
-// let z = 40;
-// let c = 60;
 let blobRadius;
 let centerPoints = [];
 
 let r = 1;
 let theta = 0;
 
-let palette, bk;
+let palette;
 function setup() {
   createCanvas(640, 360);
 
   palette = [
-    color(11, 106, 136),
-    color(45, 197, 244),
-    color(112, 50, 126),
-    color(146, 83, 161),
-    color(164, 41, 99),
-    color(236, 1, 90),
-    color(240, 99, 164),
-    color(241, 97, 100),
-    color(248, 158, 79),
-    color(252, 238, 33),
+    color(168, 70, 160),
+    color(246, 248, 255),
+    color(39, 45, 45),
+    color(35, 206, 107),
   ];
-  bk = palette.splice(5, 1)[0];
-
-  // let v = createVector(1, 1);
-  // v.normalize();
-  // tineLine(v, 300, 300, 80, 16);
 }
 
 let start;
 let val = 10;
 
 function draw() {
-  
-  // golden spiral
-  //let r = a * pow(e, b * theta);
-  // Archimedean Spiral
-  let n = -5
-  let r = 150 * pow(theta, 1/n);
+  background(80, 81, 79);
+  // variant of lituus spiral (n = -2)
+
+  let n = -5;
+  let r = 150 * pow(theta, 1 / n);
   let x = r * cos(theta);
   let y = r * sin(theta);
 
   let v = createVector(x, y);
-  let c1 = color(248, 158, 79);
-  let c2 = color(252, 238, 33);
-  v.col = lerpColor(c1, c2, (frameCount % 60) / 60);
+  // let c1 = color(248, 158, 79);
+  // let c2 = color(252, 238, 33);
+  // v.col = lerpColor(c1, c2, (frameCount % 60) / 60);
 
   if (frameCount < 360) {
-    let total = val/2;
-    for (let n = 0; n < total; n+=60) {
+    let total = val / 2;
+    for (let n = 0; n < total; n += 60) {
       let r = map(n, 0, total, 7, 4);
       addInk(v.x + width / 2, v.y + height / 2, r, random(palette));
     }
@@ -75,7 +61,6 @@ function draw() {
     noLoop();
   }
 
-  background(bk);
   for (let drop of drops) {
     drop.show();
   }
