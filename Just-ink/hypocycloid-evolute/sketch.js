@@ -18,13 +18,31 @@ function setup() {
     color(188, 237, 9),
     color(47, 82, 224),
   ];
+  palette2 = [
+    color(85, 73, 113),
+    color(99, 118, 141),
+    color(138, 198, 208),
+    color(184, 243, 255),
+  ];
+  palette3 = [
+    color(30,150,252),
+    color(162,214,249),
+    color(252,243,0),
+    color(255,198,0),
+  ];
+
 }
 
 //let start;
 let val = 4;
 
 function draw() {
-  background(76, 91, 92);
+  //1
+  //background(76, 91, 92);
+  //2
+  //background(54, 33, 62);
+  //3
+  background(7,42,200)
   let v = evolute(48, theta, a, b);
 
   // 160, n += 40
@@ -32,7 +50,7 @@ function draw() {
     let total = val / 2;
     for (let n = 0; n < total; n += 10) {
       let r = map(n, 0, total, 10, 2); // 14, 4
-      addInk(v.x + width / 2, v.y + height / 2, r, random(palette));
+      addInk(v.x + width / 2, v.y + height / 2, r, random(palette3));
     }
 
     val += 0.2;

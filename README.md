@@ -79,7 +79,7 @@ tine(m, x, y, z, c) {
        <td align="center"><a href=""> <img class="img" src="assets/astroid.jpg" alt="Adding ink with the astroid curve" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="600" /><br /><sub><b><br/>Adding ink with the astroid curve</b></sub></a></td>
-     <td align="center"><a href=""> <img class="img" src="assets/evolute.jpg" alt="Adding ink with the astroid curve" style=" display: block;
+     <td align="center"><a href=""> <img class="img" src="assets/evolute3.jpg" alt="Adding ink with the astroid curve" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="600" /><br /><sub><b><br/>Adding ink with the astroid curve</b></sub></a></td>
 </tr>
