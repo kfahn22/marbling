@@ -30,8 +30,7 @@ function setup() {
     color(147, 181, 198),
     color(221, 237, 170),
     color(240, 207, 101),
-    color(215, 129, 106)
-  
+    color(215, 129, 106),
   ];
 }
 
@@ -39,12 +38,12 @@ let start;
 let val = 4;
 
 function draw() {
-  background(189,79,108);
+  background(189, 79, 108);
   let sc = 120;
 
   //let v = astroid(120, theta);
   let v = involute(100, theta);
-  v = astroid(120, theta)
+  v = astroid(120, theta);
   let c1 = color(255, 250, 229);
   let c2 = color(255, 212, 0);
 

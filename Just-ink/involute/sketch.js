@@ -24,7 +24,7 @@ let theta = 0;
 
 let palette, bk;
 function setup() {
-  createCanvas(640, 360);
+  createCanvas(640, 640);
 
   palette = [
     color(49,59,114),
@@ -45,11 +45,11 @@ function draw() {
   let c2 = color(255, 212, 0);
 
   // 160, n += 40
-  if (frameCount < 180) {
+  if (frameCount < 240) {
     let total = val / 2;
     // n += 20
     for (let n = 0; n < total; n += 40) {
-      let r = map(n, 0, total, 10, 2); // 14, 4
+      let r = map(n, 0, total, 15, 4); // 14, 4
       addInk(v.x + width / 2, v.y + height / 2, r, random(palette));
     }
 
