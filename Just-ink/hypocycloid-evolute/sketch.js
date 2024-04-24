@@ -1,21 +1,22 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
-// Formula for Astroid Involte from Wolfram MathWord
-// https://mathworld.wolfram.com/AstroidInvolute.html
+// Formula for Hypocyload Involte from Wolfram MathWord
+// https://mathworld.wolfram.com/HypocycloidEvolute.html
 
 let drops = [];
 let theta = 0;
-let a = 12;
+let a = 5;
+let b = 30;
 
 let palette;
 function setup() {
   createCanvas(640, 640);
 
   palette = [
-    color(49, 59, 114),
-    color(98, 168, 124),
-    color(126, 224, 129),
-    color(195, 243, 192),
+    color(255, 113, 91),
+    color(249, 203, 64),
+    color(188, 237, 9),
+    color(47, 82, 224),
   ];
 }
 
@@ -23,14 +24,14 @@ function setup() {
 let val = 4;
 
 function draw() {
-  background(70, 34, 85);
-  let v = involute(75, theta, a);
+  background(76, 91, 92);
+  let v = evolute(48, theta, a, b);
 
   // 160, n += 40
-  if (frameCount < 240) {
+  if (frameCount < 320) {
     let total = val / 2;
-    for (let n = 0; n < total; n += 40) {
-      let r = map(n, 0, total, 15, 4); // 14, 4
+    for (let n = 0; n < total; n += 10) {
+      let r = map(n, 0, total, 10, 2); // 14, 4
       addInk(v.x + width / 2, v.y + height / 2, r, random(palette));
     }
 
@@ -57,8 +58,14 @@ function addInk(x, y, r, col) {
   drops.push(drop);
 }
 
-function involute(sc, theta, a) {
-  let x = sc * (1 / (a + 1)) * (a * cos(theta) - cos(a * theta));
-  let y = sc * (1 / (a + 1)) * (a * sin(theta) - sin(a * theta));
+function evolute(sc, theta, a, b) {
+  let x =
+    sc *
+    (a / (a - 2 * b)) *
+    ((a - b) * cos(theta) - b * cos(((a - b) / b) * theta));
+  let y =
+    sc *
+    (a / (a - 2 * b)) *
+    ((a - b) * sin(theta) - b * sin(((a - b) / b) * theta));
   return createVector(x, y);
 }

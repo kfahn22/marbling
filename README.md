@@ -74,14 +74,14 @@ tine(m, x, y, z, c) {
     margin-right: auto;" width="600" /><br /><sub><b><br/>Jello Mold (Blobs added using Phyllotaxis)</b></sub></a></td>
 </tr>
 <tr>
-      <td align="center"><a href=""> <img class="img" src="assets/rose.jpg" alt="Rose curve" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Adding in with the rose curve</b></sub></a></td>
-      <td align="center"><a href=""> <img class="img" src="assets/involute.jpg" alt="Involute" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Adding in with the involute curve</b></sub></a></td>
-       <td align="center"><a href=""> <img class="img" src="assets/astroid.jpg" alt="Adding in with the astroid curve" style=" display: block;
+      <td align="center"><a href=""> <img class="img" src="assets/rose.jpg" alt="Rose curve" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Adding ink with the rose curve</b></sub></a></td>
+      <td align="center"><a href=""> <img class="img" src="assets/involute.jpg" alt="Involute" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Adding ink with the involute curve</b></sub></a></td>
+       <td align="center"><a href=""> <img class="img" src="assets/astroid.jpg" alt="Adding ink with the astroid curve" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="600" /><br /><sub><b><br/>Adding in with the astroid curve</b></sub></a></td>
-     <td align="center"><a href=""> <img class="img" src="" alt="" style=" display: block;
+    margin-right: auto;" width="600" /><br /><sub><b><br/>Adding ink with the astroid curve</b></sub></a></td>
+     <td align="center"><a href=""> <img class="img" src="assets/evolute.jpg" alt="Adding ink with the astroid curve" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="600" /><br /><sub><b><br/></b></sub></a></td>
+    margin-right: auto;" width="600" /><br /><sub><b><br/>Adding ink with the astroid curve</b></sub></a></td>
 </tr>
     <tr>
       <td align="center"><a href=""> <img class="img" src="assets/marble-swne.jpg" alt="Evenly spaced ink blobs" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Evenly spaced ink blobs</b></sub></a></td>
