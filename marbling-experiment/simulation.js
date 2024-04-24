@@ -1,14 +1,14 @@
-// import {
-//   GPUComposer,
-//   GPUProgram,
-//   GPULayer,
-//   SHORT,
-//   INT,
-//   FLOAT,
-//   NEAREST,
-//   LINEAR,
-//   REPEAT,
-// } from "gpu-io";
+import {
+  GPUComposer,
+  GPUProgram,
+  GPULayer,
+  SHORT,
+  INT,
+  FLOAT,
+  NEAREST,
+  LINEAR,
+  REPEAT,
+} from "gpu-io";
 
 // There is an issue importing this library
 // Not sure exactly what to do
