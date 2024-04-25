@@ -16,7 +16,7 @@ let n = 20;
 
 // let z = 40;
 // let c = 60;
-let blobRadius;
+//let blobRadius;
 let centerPoints = [];
 
 let r = 1;
@@ -24,13 +24,13 @@ let theta = 0;
 
 let palette, bk;
 function setup() {
-  createCanvas(640, 360);
+  createCanvas(640, 640);
 
   palette = [
-    color(147, 181, 198),
-    color(221, 237, 170),
-    color(240, 207, 101),
-    color(215, 129, 106),
+    color(27, 163, 139),
+    color(255, 253, 130),
+    color(255, 155, 113),
+    color(232, 72, 85),
   ];
 }
 
@@ -38,21 +38,17 @@ let start;
 let val = 4;
 
 function draw() {
-  background(189, 79, 108);
+  background(45, 48, 71);
   let sc = 120;
 
-  //let v = astroid(120, theta);
-  let v = involute(100, theta);
-  v = astroid(120, theta);
-  let c1 = color(255, 250, 229);
-  let c2 = color(255, 212, 0);
+  let v = astroid(240, theta);
 
   // 160, n += 40
-  if (frameCount < 180) {
+
+  if (frameCount < 360) {
     let total = val / 2;
-    // n += 20
-    for (let n = 0; n < total; n += 60) {
-      let r = map(n, 0, total, 7, 2); // 14, 4
+    for (let n = 0; n < total; n += 40) {
+      let r = map(n, 0, total, 8, 3); // 14, 4
       addInk(v.x + width / 2, v.y + height / 2, r, random(palette));
     }
 
@@ -79,14 +75,14 @@ function addInk(x, y, r, col) {
   drops.push(drop);
 }
 
-function involute(sc, theta) {
-  let x = sc * (1 / 8) * (3 * cos(theta) - cos(3 * theta));
-  let y = sc * (1 / 8) * (3 * sin(theta) - sin(3 * theta));
-  return createVector(x, y);
-}
+// function involute(sc, theta) {
+//   let x = sc * (1 / 8) * (3 * cos(theta) - cos(3 * theta));
+//   let y = sc * (1 / 8) * (3 * sin(theta) - sin(3 * theta));
+//   return createVector(x, y);
+// }
 
 function astroid(sc, theta) {
-  let x = sc * pow(cos(theta), 3);
-  let y = sc * pow(sin(theta), 3);
+  let x = sc * pow(cos(theta + angle), 3);
+  let y = sc * pow(sin(theta + angle), 3);
   return createVector(x, y);
 }
