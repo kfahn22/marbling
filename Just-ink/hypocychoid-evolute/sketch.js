@@ -1,6 +1,6 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
-// Formula for Hypocyload Involte from Wolfram MathWord
+// Formula for Hypocyload Evolute from Wolfram MathWord
 // https://mathworld.wolfram.com/HypocycloidEvolute.html
 
 let drops = [];
@@ -25,12 +25,11 @@ function setup() {
     color(184, 243, 255),
   ];
   palette3 = [
-    color(30,150,252),
-    color(162,214,249),
-    color(252,243,0),
-    color(255,198,0),
+    color(30, 150, 252),
+    color(162, 214, 249),
+    color(252, 243, 0),
+    color(255, 198, 0),
   ];
-
 }
 
 //let start;
@@ -42,7 +41,7 @@ function draw() {
   //2
   //background(54, 33, 62);
   //3
-  background(7,42,200)
+  background(7, 42, 200);
   let v = evolute(48, theta, a, b);
 
   // 160, n += 40
