@@ -66,9 +66,9 @@ tine(m, x, y, z, c) {
   <tr>
       <td align="center"><a href=""> <img class="img" src="assets/centerpoints.jpg" alt="Marbling with evenly spaced blobs" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Marbling with evenly spaced blobs - no tines</b></sub></a></td>
       <td align="center"><a href=""> <img class="img" src="assets/knobs.jpg" alt="Ink blobs with knobs" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Ink blobs with knobs</b></sub></a></td>
-       <td align="center"><a href=""> <img class="img" src="assets/adding-gears.jpg" alt="Using gear curve instead of circle" style=" display: block;
+       <td align="center"><a href=""> <img class="img" src="assets/swirl.jpg" alt="Swirl" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="600" /><br /><sub><b><br/>Using gear curve instead of circle</b></sub></a></td>
+    margin-right: auto;" width="600" /><br /><sub><b><br/>Swirl</b></sub></a></td>
      <td align="center"><a href=""> <img class="img" src="assets/phyllotaxis.jpg" alt="" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="600" /><br /><sub><b><br/>Jello Mold (Blobs added using Phyllotaxis)</b></sub></a></td>
