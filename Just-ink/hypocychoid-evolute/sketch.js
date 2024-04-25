@@ -24,11 +24,20 @@ function setup() {
     color(138, 198, 208),
     color(184, 243, 255),
   ];
+  // yellow and blue
   palette3 = [
     color(30, 150, 252),
     color(162, 214, 249),
     color(252, 243, 0),
     color(255, 198, 0),
+  ];
+  // yellow and orange
+  palette4 = [
+    color(243, 227, 124),
+    color(243, 211, 74),
+    color(238, 162, 67),
+    color(243, 167, 56),
+    color(241, 217, 167),
   ];
 }
 
@@ -41,7 +50,12 @@ function draw() {
   //2
   //background(54, 33, 62);
   //3
-  background(7, 42, 200);
+  //background(7, 42, 200);
+  //4
+  //background(208,0,0) // red
+  background(9,64,116) //  blue
+  //background(76, 30, 79); // purple
+  //background(43,45,66) // dk grey
   let v = evolute(48, theta, a, b);
 
   // 160, n += 40
@@ -49,7 +63,7 @@ function draw() {
     let total = val / 2;
     for (let n = 0; n < total; n += 10) {
       let r = map(n, 0, total, 10, 2); // 14, 4
-      addInk(v.x + width / 2, v.y + height / 2, r, random(palette3));
+      addInk(v.x + width / 2, v.y + height / 2, r, random(palette4));
     }
 
     val += 0.2;

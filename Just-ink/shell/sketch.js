@@ -1,30 +1,28 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
-// Formula for Epitrochoid Evolute from Wolfram MathWord
-// https://mathworld.wolfram.com/EpitrochoidEvolute.html
-
 let drops = [];
 let theta = 0;
-let a = 5;
-let b = 10;
-let h = 20;
+// a = 5, b = 10, h = 20
+let a = 4;
+let b = 8;
+let h = 16;
 
 let palette;
 function setup() {
   createCanvas(640, 640);
 
-  palette = [
-    color(255, 113, 91),
-    color(249, 203, 64),
-    color(188, 237, 9),
-    color(47, 82, 224),
-  ];
-  palette2 = [
-    color(85, 73, 113),
-    color(99, 118, 141),
-    color(138, 198, 208),
-    color(184, 243, 255),
-  ];
+  // palette = [
+  //   color(255, 113, 91),
+  //   color(249, 203, 64),
+  //   color(188, 237, 9),
+  //   color(47, 82, 224),
+  // ];
+  // palette2 = [
+  //   color(85, 73, 113),
+  //   color(99, 118, 141),
+  //   color(138, 198, 208),
+  //   color(184, 243, 255),
+  // ];
   palette3 = [
     color(30, 150, 252),
     color(162, 214, 249),
@@ -37,20 +35,15 @@ function setup() {
 let val = 4;
 
 function draw() {
-  //1
-  //background(76, 91, 92);
-  //2
-  //background(54, 33, 62);
-  //3
   background(7, 42, 200);
-  let v = evolute(24, theta, a, b, h);
 
-  // 160, n += 40
-  if (frameCount < 360) {
+  let v = shell(24, theta, a, b, h);
+
+  if (frameCount < 270) {
     let total = val / 2;
-    for (let n = 0; n < total; n += 10) {
-      let r = map(n, 0, total, 10, 2); // 14, 4
-      addInk(v.x + width * 0.45, v.y + height / 2, r, random(palette3));
+    for (let n = 0; n < total; n += 14) {
+      let r = map(n, 0, total, 12, 4); // 14, 4
+      addInk(v.x + width * 0.47, v.y + height / 2, r, random(palette3));
     }
 
     val += 0.2;
@@ -76,9 +69,12 @@ function addInk(x, y, r, col) {
   drops.push(drop);
 }
 
-// Epitrochoid Evolute
+// Shell
+// I got this convluted equation for the Epitrochoid Evolute from Walfram Mathworld
+// https://mathworld.wolfram.com/EpitrochoidEvolute.html
+// I doubt it is implmented correctly but still looks cool
 
-function evolute(sc, theta, a, b, h) {
+function shell(sc, theta, a, b, h) {
   let c1 = h - b * cos((a / b) * theta);
   let c2 = b - h * cos((a / b) * theta);
   let denominator =
@@ -97,4 +93,9 @@ function evolute(sc, theta, a, b, h) {
         b * c2 * sin(((a + b) / b) * theta))) /
     denominator;
   return createVector(x, y);
+}
+
+// https://mathworld.wolfram.com/Swirl.html
+function swirl(r, n, theta) {
+  return sin(6 * cos * r - n * theta);
 }
