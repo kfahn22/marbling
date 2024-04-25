@@ -6,34 +6,25 @@
 let drops = [];
 let theta = 0;
 let a = 12;
-let n = 0;
 
 let palette;
 function setup() {
   createCanvas(640, 640);
 
-  palette = [
-    color(49, 59, 114),
-    color(98, 168, 124),
-    color(126, 224, 129),
-    color(195, 243, 192),
-  ];
+  palette = [color(239, 189, 213), color(190, 151, 198), color(134, 97, 193)];
 }
-
-//let start;
 let val = 4;
 
 function draw() {
-  background(70, 34, 85);
-  // 75
+  background(29, 30, 44);
+  phyllotaxis();
   let v = involute(100, theta, a);
 
-  // 160, n += 40
-  if (frameCount < 240) {
+  if (frameCount < 120) {
     let total = val / 2;
     for (let n = 0; n < total; n += 40) {
       // 40
-      let r = map(n, 0, total, 15, 4); // 14, 4
+      let r = map(n, 0, total, 20, 6); // 14, 4
       addInk(v.x + width / 2, v.y + height / 2, r, random(palette));
     }
 
@@ -64,4 +55,18 @@ function involute(sc, theta, a) {
   let x = sc * (1 / (a + 1)) * (a * cos(theta) - cos(a * theta));
   let y = sc * (1 / (a + 1)) * (a * sin(theta) - sin(a * theta));
   return createVector(x, y);
+}
+
+// https://editor.p5js.org/codingtrain/sketches/CehY0jsLV
+function phyllotaxis() {
+  let c = 5;
+  for (let i = 0; i < 180; i++) {
+    let a = i * 137.5;
+    let r = c * sqrt(i);
+    let x = width / 2 + r * cos(a);
+    let y = height / 2 + r * sin(a);
+    fill(255, 173, 5);
+    noStroke();
+    ellipse(x, y, c + 1, c + 1);
+  }
 }
