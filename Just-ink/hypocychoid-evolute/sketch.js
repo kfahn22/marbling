@@ -50,20 +50,20 @@ function draw() {
   //2
   //background(54, 33, 62);
   //3
-  //background(7, 42, 200);
+  background(7, 42, 200);
   //4
   //background(208,0,0) // red
-  background(9,64,116) //  blue
+  //background(9,64,116) //  blue
   //background(76, 30, 79); // purple
   //background(43,45,66) // dk grey
-  let v = evolute(48, theta, a, b);
+  let v = evolute(45, theta, a, b);
 
   // 160, n += 40
   if (frameCount < 320) {
     let total = val / 2;
     for (let n = 0; n < total; n += 10) {
       let r = map(n, 0, total, 10, 2); // 14, 4
-      addInk(v.x + width / 2, v.y + height / 2, r, random(palette4));
+      addInk(v.x + width / 2, v.y + height / 2, r, random(palette3));
     }
 
     val += 0.2;

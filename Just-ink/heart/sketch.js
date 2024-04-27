@@ -8,18 +8,18 @@ let sign = 1;
 function setup() {
   createCanvas(640, 640);
   palette = [
-    color(94, 43, 255),
-    color(192, 76, 253),
-    color(252, 109, 171),
-    color(247, 246, 197),
-    color(243, 250, 225),
+    color(238,118,116),
+    color(236,87,102),
+    color(218,52,77),
+    color(217,30,54),
+    color(196,35,72),
   ];
 }
 let val = 4;
 
 function draw() {
   //background(243,250,225);
-  background(14, 0, 4);
+  background(35,32,32);
 
   let sc = 360;
   let v = heart(sc, theta);

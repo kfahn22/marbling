@@ -29,21 +29,60 @@ function setup() {
     color(252, 243, 0),
     color(255, 198, 0),
   ];
+  palette4 = [
+    //color(129,126,159),
+    //color(78,2,80),
+    //color(128,26,134),
+    color(179,103,155),
+    ///color(127,194,155),
+    color(181,239,138),
+    color(47,102,144),
+    color(35,116,171),
+    //color(238, 150, 75),
+    color(255,133,82)
+    //color(215,241,113)
+  ]
+  palette5 = [
+    color(255,253,130),
+    color(67,188,205),
+    color(35, 116, 171),
+    color(255, 133, 82),
+  ];
+  palette6 = [
+    color(121,180,115),
+    color(112,163,127),
+    color(65,101,138),
+    color(65,64,115),
+    color(255,255,255)
+  ]
+  palette7 = [
+    color(251,251,242),
+    color(2,8,135),
+    color(221,117,150),
+    color(207,18,89),
+    
+  ];
+
 }
 
 //let start;
 let val = 4;
 
 function draw() {
-  background(7, 42, 200);
-
+  //background(7, 42, 200);
+  background(19,18,0)
+  //background(27,32,33)
+  //background(76, 57,87)
+  //background(215,241,113)
+  //background(238,150,75)
+  //background(47,34,53) //dk purple
   let v = shell(24, theta, a, b, h);
 
   if (frameCount < 270) {
     let total = val / 2;
     for (let n = 0; n < total; n += 14) {
       let r = map(n, 0, total, 12, 4); // 14, 4
-      addInk(v.x + width * 0.47, v.y + height / 2, r, random(palette3));
+      addInk(v.x + width * 0.47, v.y + height / 2, r, random(palette7));
     }
 
     val += 0.2;
