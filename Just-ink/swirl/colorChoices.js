@@ -60,3 +60,7 @@ let colorsCT = [
   "#F89E4F",
   "#FCEE21",
 ];
+
+let colors8 = [
+  []
+]
