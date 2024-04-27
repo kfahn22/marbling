@@ -1,41 +1,36 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
-// Formula for Astroid Involte from Wolfram MathWord
-// https://mathworld.wolfram.com/AstroidInvolute.html
-
 let drops = [];
 let theta = 0;
-let a = 30;
-let n = 9;
-const e = 2.718281828459045;
-let sc = 1;
 let palette;
-let dir = true;
-
-let centerPoints = [];
 
 function setup() {
   createCanvas(640, 640);
-  palette = [color(239, 189, 213), color(190, 151, 198), color(134, 97, 193)];
+  palette = [
+    color(94, 43, 255),
+    color(192, 76, 253),
+    color(252, 109, 171),
+    color(247, 246, 197),
+    color(243, 250, 225),
+  ];
 }
 let val = 4;
 
 function draw() {
-  background(29, 30, 44);
-  let a = 40;
+  //background(243,250,225);
+  background(14, 0, 4);
+  let a = 400;
   //let v = epispiral(1, 9, theta);
   //let v = trisectrix(75, theta);
   //let v = radialCurve(250, theta);
-  let v = quadrifolium(a, theta);
-  if (v.x === 0 && v.y === 0) {
-    continue;
-  }
-    
+  let v = quadrifolium(a, 4, theta);
+  //let v = superEllipse(50, 3, 3, theta, 5.4);
+
   if (frameCount < 720) {
     let total = val / 2;
     for (let n = 0; n < total; n += 40) {
       // 40
-      let r = map(n, 0, total, 7, 4); // 14, 4
+      let r = map(n, 0, total, 8, 4); // 14, 4
       addInk(v.x + width / 2, v.y + height / 2, r, random(palette));
     }
 
@@ -62,18 +57,6 @@ function addInk(x, y, r, col) {
   }
   drops.push(drop);
 }
-
-// function butterfly(sc, theta) {
-//   let r =
-//     pow(e, sin(theta)) -
-//     2 * cos(4 * theta) +
-//     pow(sin((1 / 24) * (2 * theta - PI)), 5);
-//   let x = floor(sc * r * cos(theta));
-//   let y = floor(-sc * r * sin(theta));
-
-//   //console.log(x,y)
-//   return createVector(x, y);
-// }
 
 function removeDuplicates(arr) {
   for (let i = arr.length - 1; i >= 0; i--) {
@@ -118,9 +101,16 @@ function radialCurve(a, theta) {
   return createVector(x, y);
 }
 
-function quadrifolium(a, theta) {
-  let x = 12 * a * cos(theta) * pow(sin(theta), 2);
-  let y = 12 * a * pow(cos(theta), 2) * sin(theta);
+// change p to get different variations
+function quadrifolium(a, p, theta) {
+  let x = a * cos(theta) * pow(sin(theta), p);
+  let y = a * pow(cos(theta), p) * sin(theta);
+  return createVector(x, y);
+}
 
+function pedal(n, theta) {
+  let r = (n - 2) * sin((n / (n - 2)) * (theta + 0.5 * PI));
+  let x = sc * r * cos(theta);
+  let y = sc * r * sin(theta);
   return createVector(x, y);
 }
