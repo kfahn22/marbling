@@ -7,32 +7,33 @@ let val = 4;
 
 // Theta can be incremented by 1 every frameCount or by an additional amount
 // Adding in an additional ammount will change the render
-// You can experiment with different values ranging from 0, 1/64;
-let inc = 1/32;
+// You can experiment with different values ranging from 0, 64;
+let inc = 16;
 
 function setup() {
   createCanvas(640, 640);
   palette = [
-    color(64, 31, 62),
-    color(63, 46, 86),
-    color(69, 63, 120),
-    color(117, 154, 171),
+    color(230,175,46),
+    color(224,226,219),
+    color(61,52,139),
+    color(190,183,164),
   ];
 }
 
 function draw() {
-  background(250, 242, 161);
- let v = pedal(47, 7, theta);
+  background(25,23,22);
 
-  if (frameCount < 480) {
+  let v = hypocycloid(180, 7, theta);
+
+  if (frameCount < 240) {
     let total = val / 2;
-    for (let n = 0; n < total; n += 25) {
-      let r = map(n, 0, total, 9, 4); // 14, 4
+    for (let n = 0; n < total; n += 60) {
+      let r = map(n, 0, total, 14, 4);
       addInk(v.x + width / 2, v.y + height / 2, r, random(palette));
     }
 
     val += 0.2;
-    theta += 1 + inc * PI;
+    theta += 1 + (inc * PI) / 64;
   } else {
     noLoop();
   }

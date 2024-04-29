@@ -2,43 +2,49 @@
 
 // Formula for Astroid Involte from Wolfram MathWord
 // https://mathworld.wolfram.com/AstroidInvolute.html
-
+// n1=n2=n3=0.3
+// m = 3; a = 2; b = 2;
 let drops = [];
 let theta = 0;
-var n1 = 0.3;
-var n2 = 0.3;
-var n3 = 0.3;
-var m = 3;
-var a = 2;
-var b = 2;
-let total = 300;
-let sc = 1;
+var n1 = 1;
+var n2 = 1;
+var n3 = 1;
+var m = 6;
+var a = 1;
+var b = 1;
+// let total = 300;
+let sc = 200;
 let palette;
-let dir = true;
+// let dir = true;
 
 let centerPoints = [];
 
 function setup() {
   createCanvas(640, 640);
-  palette = [color(239, 189, 213), color(190, 151, 198), color(134, 97, 193)];
+  palette = [
+    color(69,74,222),
+    color(177,74,237),
+    color(200,116,217),
+    color(225,187,201),
+  ];
 }
 let val = 4;
 
 function draw() {
-  background(29, 30, 44);
+  background(27,31,59);
 
-  let v = superSH(300, theta);
+  let v = superSH(sc, theta);
 
-  if (frameCount < 240) {
+  if (frameCount < 386) {
     let total = val / 2;
     for (let n = 0; n < total; n += 40) {
-      // 40
       let r = map(n, 0, total, 10, 4); // 14, 4
       addInk(v.x + width / 2, v.y + height / 2, r, random(palette));
     }
 
     val += 0.2;
-    theta += 1;
+    //theta += 1;
+    theta += PI / 64;
   } else {
     noLoop();
   }
@@ -88,9 +94,9 @@ function supershape(theta) {
   return 1 / part3;
 }
 
-function superSH(radius, theta) {
+function superSH(sc, theta) {
   let r = supershape(theta);
-  let x = sc * radius * r * cos(theta);
-  let y = sc * radius * r * sin(theta);
+  let x = sc * r * cos(theta);
+  let y = sc * r * sin(theta);
   return createVector(x, y);
 }

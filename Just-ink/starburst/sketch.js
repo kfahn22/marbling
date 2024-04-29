@@ -1,6 +1,6 @@
 // https://editor.p5js.org/codingtrain/sketches/fsw-rJrpr
 
-// Formula for Hypocyload Evolute from Wolfram MathWord
+// Formula for Hypocyloid Evolute from Wolfram MathWord
 // https://mathworld.wolfram.com/HypocycloidEvolute.html
 
 let drops = [];

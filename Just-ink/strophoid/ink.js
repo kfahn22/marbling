@@ -1,4 +1,4 @@
-const circleDetail = 50;
+const circleDetail = 200;
 
 class Drop {
   constructor(x, y, r, col) {

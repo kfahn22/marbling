@@ -5,6 +5,7 @@
 
 let drops = [];
 let theta = 0;
+let omega;
 let a = 30;
 let n = 9;
 const e = 2.718281828459045;
@@ -22,22 +23,30 @@ let val = 4;
 
 function draw() {
   background(29, 30, 44);
+  let sc = 50;
+  let a = PI/12;
+  let b = 1;
+  // 90, 35
+  let omega = 35;
+  // if (frameCount % 2 === 0) {
+  //   omega = 35;
+  // } else {
+  //   omega = 90;
+  // }
+  let v = strophoid(sc, a, b, theta, omega);
 
-  // n = 2 circle
-  // n = 5.4 rounded square
-  let v = superEllipse(50, 1, 3, theta, 2);
-
-  if (frameCount < 180) {
+  if (frameCount < 240) {
     let total = val / 2;
     for (let n = 0; n < total; n += 40) {
       // 40
-      let r = map(n, 0, total, 14, 4); // 14, 4
+      let r = map(n, 0, total, 7, 4); // 14, 4
       addInk(v.x + width / 2, v.y + height / 2, r, random(palette));
     }
 
     val += 0.2;
     theta += 1;
-    //theta += PI/8;
+    //theta += PI/32;
+    a += 1;
   } else {
     noLoop();
   }
@@ -59,6 +68,7 @@ function addInk(x, y, r, col) {
   drops.push(drop);
 }
 
+
 function removeDuplicates(arr) {
   for (let i = arr.length - 1; i >= 0; i--) {
     for (let j = i - 1; j >= 0; j--) {
@@ -70,40 +80,9 @@ function removeDuplicates(arr) {
   }
 }
 
-// function sec(theta) {
-//   return 1 / cos(theta);
-// }
-
-// https://editor.p5js.org/codingtrain/sketches/Hk-1AMTgN
-function superEllipse(sc, a, b, theta, n) {
-  let na = 2/n;
-  let x = sc * pow(abs(cos(theta)), na) * a * sgn(cos(theta));
-  let y = sc * pow(abs(sin(theta)), na) * b * sgn(sin(theta));
-  //vertex(x, y);
+function strophoid(sc, a, b, theta, omega) {
+  let r = (b * sin(a - 2 * theta)) / sin(a - theta);
+  let x = sc * r * cos(theta + omega);
+  let y = sc * r * sin(theta + omega);
   return createVector(x, y);
-}
-function supershape(theta) {
-  var part1 = (1 / a) * cos((theta * m) / 4);
-  part1 = abs(part1);
-  part1 = pow(part1, n2);
-
-  var part2 = (1 / b) * sin((theta * m) / 4);
-  part2 = abs(part2);
-  part2 = pow(part2, n3);
-
-  var part3 = pow(part1 + part2, 1 / n1);
-
-  if (part3 === 0) {
-    return 0;
-  }
-
-  return 1 / part3;
-}
-
-
-function sgn(val) {
-  if (val == 0) {
-    return 0;
-  }
-  return val / abs(val);
 }

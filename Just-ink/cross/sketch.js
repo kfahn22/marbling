@@ -29,7 +29,7 @@ let val = 4;
 function draw() {
   background(30, 32, 25);
 
-  let v = cross(60, 1, 0.75, theta);
+  let v = cross(60, 0.5, 0.5, theta);
 
   if (frameCount < 480) {
     let total = val / 2;
@@ -43,7 +43,7 @@ function draw() {
 
     val += 0.2;
     theta += 1;
-    //a += 1;
+    //theta += PI/64;
   } else {
     noLoop();
   }
@@ -67,7 +67,7 @@ function addInk(x, y, r, col) {
 }
 
 function sec(theta) {
-  return 1/cos(theta);
+  return 1 / cos(theta);
 }
 
 function csc(theta) {
