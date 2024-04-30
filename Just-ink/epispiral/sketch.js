@@ -24,12 +24,12 @@ function draw() {
   background(29, 30, 44);
   let a = 40;
   //let v = epispiral(1, 9, theta);
-  //let v = trisectrix(75, theta);
+  let v = trisectrix(75, theta);
   //let v = radialCurve(250, theta);
-  let v = quadrifolium(a, theta);
-  if (v.x === 0 && v.y === 0) {
-    continue;
-  }
+  //let v = quadrifolium(a, theta);
+  // if (v.x === 0 && v.y === 0) {
+  //   continue;
+  // }
     
   if (frameCount < 720) {
     let total = val / 2;
@@ -63,17 +63,17 @@ function addInk(x, y, r, col) {
   drops.push(drop);
 }
 
-// function butterfly(sc, theta) {
-//   let r =
-//     pow(e, sin(theta)) -
-//     2 * cos(4 * theta) +
-//     pow(sin((1 / 24) * (2 * theta - PI)), 5);
-//   let x = floor(sc * r * cos(theta));
-//   let y = floor(-sc * r * sin(theta));
+function butterfly(sc, theta) {
+  let r =
+    pow(e, sin(theta)) -
+    2 * cos(4 * theta) +
+    pow(sin((1 / 24) * (2 * theta - PI)), 5);
+  let x = floor(sc * r * cos(theta));
+  let y = floor(-sc * r * sin(theta));
 
-//   //console.log(x,y)
-//   return createVector(x, y);
-// }
+  //console.log(x,y)
+  return createVector(x, y);
+}
 
 function removeDuplicates(arr) {
   for (let i = arr.length - 1; i >= 0; i--) {
