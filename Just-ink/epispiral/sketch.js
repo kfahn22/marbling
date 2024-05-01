@@ -10,7 +10,7 @@ let n = 9;
 const e = 2.718281828459045;
 let sc = 1;
 let palette;
-let dir = true;
+//let dir = true;
 
 let centerPoints = [];
 

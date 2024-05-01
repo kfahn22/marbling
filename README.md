@@ -76,7 +76,7 @@ tine(m, x, y, z, c) {
 <tr>
       <td align="center"><a href=""> <img class="img" src="assets/rose3_5.jpg" alt="Rose curve" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Adding ink with the rose curve</b></sub></a></td>
       <td align="center"><a href=""> <img class="img" src="assets/involute.jpg" alt="Involute" style="vertical-align:top;" width="600" /><br /><sub><b><br/>Adding ink with the involute curve</b></sub></a></td>
-       <td align="center"><a href=""> <img class="img" src="assets/diamond.jpg" alt="Adding ink with the astroid curve" style=" display: block;
+       <td align="center"><a href="Just-ink/diamonds"> <img class="img" src="assets/diamond.jpg" alt="Adding ink with the astroid curve" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="600" /><br /><sub><b><br/>Adding ink with the astroid curve</b></sub></a></td>
      <td align="center"><a href="Just-ink/starburst"> <img class="img" src="assets/sun.jpg" alt="Here Come's the Sun" style=" display: block;
