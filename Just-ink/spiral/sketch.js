@@ -39,8 +39,8 @@ let start;
 let val = 10;
 
 function draw() {
-  background(66, 62, 59);
-
+  //background(66, 62, 59);
+  background(4, 27, 21);
   let v = spiral(-5, 250, theta);
   //let v = goldenSpiral(10, b, theta);
 

@@ -14,19 +14,21 @@ function setup() {
     color(24, 49, 79),
     color(56, 78, 119),
     color(230, 249, 175),
-    color(13, 6, 48),
+   color(13, 6, 48),
     //color(255, 255, 255)
   ];
+
+   
 }
 
 //let start;
 let val = 4;
 
 function draw() {
-  //background("#66D334");
   background(139, 190, 178);
-  //let v = shell(24, theta, a, b, h);
-  let v = shell(24, theta, 5, 10, 20);
+  
+  
+  let v = swirl(24, theta, 5, 10, 20);
 
   if (frameCount < 270) {
     let total = val / 2;
@@ -58,12 +60,12 @@ function addInk(x, y, r, col) {
   drops.push(drop);
 }
 
-// Shell
+// Swirl
 // I got this convluted equation for the Epitrochoid Evolute from Walfram Mathworld
 // https://mathworld.wolfram.com/EpitrochoidEvolute.html
 // I doubt it is implmented correctly but still looks cool
 
-function shell(sc, theta, a, b, h) {
+function swirl(sc, theta, a, b, h) {
   let c1 = h - b * cos((a / b) * theta);
   let c2 = b - h * cos((a / b) * theta);
   let denominator =
@@ -85,6 +87,6 @@ function shell(sc, theta, a, b, h) {
 }
 
 // https://mathworld.wolfram.com/Swirl.html
-function swirl(r, n, theta) {
-  return sin(6 * cos * r - n * theta);
-}
+// function swirl(r, n, theta) {
+//   return sin(6 * cos * r - n * theta);
+// }
